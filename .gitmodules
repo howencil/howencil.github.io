@@ -1,0 +1,9 @@
+[submodule "themes/hugo-theme-stack"]
+	path = themes/hugo-theme-stack
+	url = git@github.com:CaiJimmy/hugo-theme-stack.git
+[submodule "themes/hugo-freelancer-theme"]
+	path = themes/hugo-freelancer-theme
+	url = git@github.com:digitalcraftsman/hugo-freelancer-theme.git
+[submodule "themes/hugo-incorporated"]
+	path = themes/hugo-incorporated
+	url = git@github.com:nilproductions/hugo-incorporated.git
