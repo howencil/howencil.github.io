@@ -1,10 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>XXOXXSXX</title>
+        <link>http://example.org/</link>
+        <description>I don&#39;t give a fuck</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Jun 2022 09:24:47 &#43;0800</lastBuildDate>
+            <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>First</title>
+    <link>http://example.org/posts/first/</link>
+    <pubDate>Sat, 04 Jun 2022 09:24:47 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/posts/first/</guid>
+    <description><![CDATA[HelloWorld ]]></description>
+</item>
+</channel>
 </rss>

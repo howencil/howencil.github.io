@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Hugo添加tags等分类 - XXOXXSXX</title><meta name="Description" content="I don&#39;t give a fuck"><meta property="og:title" content="Hugo添加tags等分类" />
+<meta property="og:description" content="自定义分类 Hugo是支持用户自定义分类的，这个称为taxonomy，可以来对网页内容进行逻辑划分，详情可以在这里查看。 分类taxonomy有" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-06T14:53:34+08:00" />
+<meta property="article:modified_time" content="2022-06-06T14:53:34+08:00" /><meta property="og:site_name" content="XXOXXSXX" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo添加tags等分类"/>
+<meta name="twitter:description" content="自定义分类 Hugo是支持用户自定义分类的，这个称为taxonomy，可以来对网页内容进行逻辑划分，详情可以在这里查看。 分类taxonomy有"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" /><link rel="prev" href="http://example.org/zh-cn/posts/hugo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%89%8D%E7%BD%AE%E5%8F%82%E6%95%B0/" /><link rel="next" href="http://example.org/zh-cn/posts/hugo%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98loveit/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hugo添加tags等分类",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/zh-cn\/posts\/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB\/"
+        },"genre": "posts","keywords": "hugo","wordcount":  2065 ,
+        "url": "http:\/\/example.org\/zh-cn\/posts\/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB\/","datePublished": "2022-06-06T14:53:34+08:00","dateModified": "2022-06-06T14:53:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "插画师"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" selected>简体中文</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="">文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hugo添加tags等分类</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-06">2022-06-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2065 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#自定义分类">自定义分类</a>
+      <ul>
+        <li><a href="#配置分类">配置分类</a></li>
+        <li><a href="#分类集合查看">分类集合查看</a></li>
+        <li><a href="#分类排序">分类排序</a></li>
+      </ul>
+    </li>
+    <li><a href="#网页布局修改">网页布局修改</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#resource资源链接汇总">Resource资源链接汇总</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="自定义分类">自定义分类</h2>
+<p>Hugo是支持用户自定义分类的，这个称为taxonomy，可以来对网页内容进行逻辑划分，详情可以在<a href="https://gohugo.io/content-management/taxonomies/" target="_blank" rel="noopener noreffer">这里</a>查看。</p>
+<p>分类taxonomy有3个概念：</p>
+<ul>
+<li><strong>Taxonomy 分类</strong>: 可以用来对内容进行分类的类别</li>
+<li><strong>Term 术语</strong>: 分类的一个键</li>
+<li><strong>Value 值</strong>: 分配给这个Term的具体内容</li>
+</ul>
+<p>例如我需要增加3个分类，分别是：</p>
+<ul>
+<li>tag：文章标签</li>
+<li>topic：文章主题/文章系列</li>
+<li>category：文章分类</li>
+</ul>
+<p>以tag为例，则对应Taxonomy是tag，Term是具体标签内容比如docker或者hugo，Value是打上这个标签的对应网页。</p>
+<h3 id="配置分类">配置分类</h3>
+<p>需要在 <code>config.toml</code> 中增加分类。还是这个例子，则需要增加如下内容：</p>
+<pre tabindex="0"><code>[taxonomies]
+  tag = &#34;tags&#34;
+  series = &#34;series&#34;
+  category = &#34;categories&#34;
+</code></pre><p>而将每个post的头部也相应增加对应的分类，例如这篇的头部就相应为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">date</span>: <span style="color:#e6db74">&#34;2018-01-09T16:22:25+08:00&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">draft</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Blog养成记(4) 增加tags等分类&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tags</span>: [<span style="color:#e6db74">&#34;hugo&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">series</span>: [<span style="color:#e6db74">&#34;Blog养成记&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">categories</span>: [<span style="color:#e6db74">&#34;杂技浅尝&#34;</span>]
+</span></span></code></pre></div><p>当然实际上，Hugo默认会产生 <code>tags</code> 和 <code>categories</code> 的分类，如果只需要这两个，可以不用在 <code>config.toml</code> 中声明就在post头部使用。</p>
+<h3 id="分类集合查看">分类集合查看</h3>
+<p>使用分类taxonomy之后，Hugo会使用分类的模板 (taxonomy templates) 来自动生成一个显示所有分类的term术语的网页以及一个显示该术语的所有value内容列表网页。</p>
+<p>还是以tag为例：</p>
+<p><code>example.com/tags/</code> 会列出tags中的所有术语；</p>
+<p><code>example.com/tags/docker</code> 会列出tags标为docker的所有网页列表。</p>
+<h3 id="分类排序">分类排序</h3>
+<blockquote>
+<p>分类排序还未正式尝试，无法确认正式效果，还需后面确认后再补充。</p>
+</blockquote>
+<p>在内容页头部中以 <code>术语名称_weight</code> 来标志权重，可在分类的查看野种按该权重进行排序。但暂时只支持默认情况下以日期作为权重排序标准。</p>
+<p>还是以这篇博文为例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">date</span>: <span style="color:#e6db74">&#34;2018-01-09T16:22:25+08:00&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">draft</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Blog养成记(4) 增加tags、topics和categories&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tags</span>: [<span style="color:#e6db74">&#34;hugo&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tags_weight</span>: <span style="color:#ae81ff">66</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">series</span>: [<span style="color:#e6db74">&#34;Blog养成记&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">series_weight</span>: <span style="color:#ae81ff">96</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">categories</span>: [<span style="color:#e6db74">&#34;浅尝杂技&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">categoryes_weight</span>: <span style="color:#ae81ff">96</span>
+</span></span></code></pre></div><h2 id="网页布局修改">网页布局修改</h2>
+<p>我的Hugo源码在<a href="https://github.com/orianna-zzo/blog-hugo" target="_blank" rel="noopener noreffer">这里</a>，可以进行参考。</p>
+<p>我现在使用的是<a href="https://github.com/nishanths/cocoa-hugo-theme" target="_blank" rel="noopener noreffer">cocoa主题</a>，该主题并不会显示tags等分类，因此对于网页布局需要进行覆盖。</p>
+<p>我先将 <code>themes/cocoa/layouts/blog</code> 中的 <code>single.html</code> 复制到 <code>layouts/blog</code> 中，只需要对主文件夹中 <code>layouts</code> 文件夹中进行修改，修改后的布局会自动覆盖主题中的布局。</p>
+<p>网页布局主要涉及到Hugo的模板，可对现有主题的布局进行的修改有很多，具体语法和教程可参考官网对于<a href="https://gohugo.io/templates/" target="_blank" rel="noopener noreffer">模板的介绍</a>，现暂且从简单入手，只考虑对博客正文页增加tags、topics、categories，并增加table of contents作为目录导航，因此只需要考虑single page template单页模板，<a href="https://gohugo.io/templates/single-page-templates/" target="_blank" rel="noopener noreffer">此处</a>有官网具体说明。</p>
+<h4 id="显示分类">显示分类</h4>
+<p>在显示文章的元信息块 (<code>&lt;div class=&quot;meta&quot;&gt;</code>) 中，在阅读时间下面 (<code>{{ if not .Site.Params.noshowreadtime }}...{{ end }}</code>)，增加显示tags、topics和categories的代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ with .Params.tags }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tags&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ range . }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span>&gt; &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">tags</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}}/{{</span> <span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">urlize</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">a</span>&gt; &lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ end }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{ with .Params.topics }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;topics&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ range . }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span>&gt; &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">topics</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}}/{{</span> <span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">urlize</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">a</span>&gt; &lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ end }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{ with .Params.categories }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;categories&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ range . }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">categories</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span><span style="color:#960050;background-color:#1e0010">}}/{{</span> <span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">urlize</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">a</span>&gt; &lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ end }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div><p>这样，这篇博文头部定义的tag、topic和category就都显示出来了。</p>
+<h4 id="增加page-tag-css类">增加page-tag CSS类</h4>
+<p>虽然显示出来了，但是显示格式需要通过css定义呀。在 <code>static/css</code> 文件夹中的 <code>override.css</code>中增加 <code>page-tag</code>的css类：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">page-tag</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">14</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Raleway&#39;</span>, <span style="color:#e6db74">&#39;Helvetica Neue&#39;</span>, <span style="color:#e6db74">&#39;Arial&#39;</span>, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">letter-spacing</span>: <span style="color:#ae81ff">-0.005</span><span style="color:#66d9ef">rem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">400</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#666</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>将每一个显示分类的代码都放入一个div块，并使用page-tag作为css类。</p>
+<h4 id="布局修改">布局修改</h4>
+<p>虽然现在都显示出来了，但是都没有放在我想要的位置。我对前端一知半解，每次调试都耗费不少时间，如果你对这些很熟悉，完全可以自己试着玩玩，我更多的目的为了记录。</p>
+<p>首先，因为meta类中定义了 <code>display: flex</code>，所以这个div中的div都是浮动的，无法占有一行，所以先在自定义css中对meta的 <code>display</code> 重新定义：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">meta</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">block</span> <span style="color:#75715e">!important</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>这样meta类的div中的所有div都占有一行，但是如此一来，显示post时间和显示阅读时间也分成了两行，所以对于这两部分，在外面也套一个div，定义style的 <code>display: flex</code>。同样的，我也希望topic和category也在一行，所以做同样的操作。</p>
+<p>再加上一些局部布局样式修改以及若标签内没有内容就不显示这部分内容，这一块代码现在应为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;meta&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span>    <span style="color:#f92672">&lt;</span>div style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display: flex&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span>        {{ <span style="color:#66d9ef">if</span> <span style="color:#f92672">and</span> <span style="color:#f92672">.</span>Site<span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>dateformfull <span style="color:#f92672">.</span>Site<span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>dateform }}
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span>        <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> title<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{{ .Date.Format .Site.Params.dateformfull }}&#39;</span><span style="color:#f92672">&gt;</span>{{ <span style="color:#f92672">.</span>Date<span style="color:#f92672">.</span>Format <span style="color:#f92672">.</span>Site<span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>dateformfull }}<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span>        {{ <span style="color:#66d9ef">else</span> }}
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span>        <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> title<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{{ .Date.Format &#34;Mon Jan 2 2006 15:04:05&#34; }}&#39;</span><span style="color:#f92672">&gt;</span>{{ <span style="color:#f92672">.</span>Date<span style="color:#f92672">.</span>Format <span style="color:#e6db74">&#34;Jan 2, 2006&#34;</span> }}<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">7</span>        {{ end }}
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">8</span>      
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">9</span>        {{ <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> <span style="color:#f92672">.</span>Site<span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>noshowreadtime }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10</span>        <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;reading-time&#34;</span><span style="color:#f92672">&gt;&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;middot&#34;</span><span style="color:#f92672">&gt;&lt;/</span>div<span style="color:#f92672">&gt;</span>{{ i18n <span style="color:#e6db74">&#34;readingTime&#34;</span> <span style="color:#f92672">.</span>ReadingTime }}<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11</span>        {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">12</span>    <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">13</span>    <span style="color:#f92672">&lt;</span>div style<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display: flex;&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">14</span>        {{ <span style="color:#66d9ef">if</span> <span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>series }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">15</span>        <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">16</span>            <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span><span style="color:#f92672">&gt;</span>topic:<span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">17</span>            {{ <span style="color:#66d9ef">with</span> <span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>series }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">18</span>            <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;series&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">19</span>                {{ range <span style="color:#f92672">.</span> }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">20</span>                <span style="color:#f92672">&lt;</span>a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span>series<span style="color:#e6db74">&#34; | absURL }}/{{ . | urlize }}&#34;</span><span style="color:#f92672">&gt;</span>{{ <span style="color:#f92672">.</span> }}<span style="color:#f92672">&lt;/</span>a<span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">21</span>                {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">22</span>            <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">23</span>            {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">24</span>        <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">25</span>        {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">26</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">27</span>        {{ <span style="color:#66d9ef">if</span> <span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>categories }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">28</span>        <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">29</span>            <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span><span style="color:#f92672">&gt;</span>category: <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">30</span>            {{ <span style="color:#66d9ef">with</span> <span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>categories }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">31</span>            <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;categories&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">32</span>                {{ range <span style="color:#f92672">.</span> }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">33</span>                <span style="color:#f92672">&lt;</span>a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span>categories<span style="color:#e6db74">&#34; | absURL}}/{{ . | urlize }}&#34;</span><span style="color:#f92672">&gt;</span>{{ <span style="color:#f92672">.</span> }}<span style="color:#f92672">&lt;/</span>a<span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">34</span>                {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">35</span>            <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">36</span>            {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">37</span>        <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">38</span>        {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">39</span>    <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">40</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">41</span>    {{ <span style="color:#66d9ef">if</span> <span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>tags }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">42</span>    <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">43</span>        <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span><span style="color:#f92672">&gt;</span>tags: <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">44</span>        {{ <span style="color:#66d9ef">with</span> <span style="color:#f92672">.</span>Params<span style="color:#f92672">.</span>tags }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">45</span>        <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span> id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">46</span>            {{ range <span style="color:#f92672">.</span> }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">47</span>            <span style="color:#f92672">&lt;</span>div class<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-tag&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">48</span>                <span style="color:#f92672">&lt;</span>a href<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span>tags<span style="color:#e6db74">&#34; | absURL }}/{{ . | urlize }}&#34;</span><span style="color:#f92672">&gt;</span>{{ <span style="color:#f92672">.</span> }}<span style="color:#f92672">&lt;/</span>a<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">49</span>            <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">50</span>            {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">51</span>        <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">52</span>        {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">53</span>    <span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">54</span>    {{ end }}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">55</span><span style="color:#f92672">&lt;/</span>div<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><h2 id="resource资源链接汇总">Resource资源链接汇总</h2>
+<p>我建立的docker for Hugo开发镜像: <a href="https://hub.docker.com/r/orianna/hugo-docker-dev/" target="_blank" rel="noopener noreffer">Docker Hub上的repo</a>、<a href="https://github.com/orianna-zzo/hugo-docker-dev" target="_blank" rel="noopener noreffer">Github上的repo</a>。
+我的个人主页Hugo代码: <a href="https://github.com/orianna-zzo/blog-hugo" target="_blank" rel="noopener noreffer">blog-hugo</a></p>
+<p><a href="https://gohugo.io/" target="_blank" rel="noopener noreffer">Hugo官网</a>、<a href="https://gohugo.io/content-management/taxonomies/" target="_blank" rel="noopener noreffer">关于Taxonomy分类说明</a>、<a href="https://gohugo.io/templates/" target="_blank" rel="noopener noreffer">Hugo Template介绍</a></p>
+<blockquote>
+<p><a href="https://orianna-zzo.github.io/sci-tech/2018-01/blog%E5%85%BB%E6%88%90%E8%AE%B04-hugo%E4%B8%AD%E5%A2%9E%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" target="_blank" rel="noopener noreffer">参考文章</a></p>
+</blockquote>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-06-06</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" data-title="Hugo添加tags等分类" data-hashtags="hugo"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" data-hashtag="hugo"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" data-title="Hugo添加tags等分类"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" data-title="Hugo添加tags等分类"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/" data-title="Hugo添加tags等分类"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/hugo/">hugo</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/hugo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%89%8D%E7%BD%AE%E5%8F%82%E6%95%B0/" class="prev" rel="prev" title="Hugo文章模板的前置参数"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Hugo文章模板的前置参数</a>
+            <a href="/zh-cn/posts/hugo%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98loveit/" class="next" rel="next" title="Hugo配置主题LoveIt">Hugo配置主题LoveIt<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

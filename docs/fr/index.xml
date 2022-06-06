@@ -1,0 +1,9 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>XXOXXSXX</title>
+        <link>http://example.org/fr/</link>
+        <description>I don&#39;t give a fuck</description>
+        <generator>Hugo -- gohugo.io</generator><language>fr</language>
+            <atom:link href="http://example.org/fr/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>
