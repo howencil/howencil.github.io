@@ -4,6 +4,7 @@ date: 2022-06-06T14:53:34+08:00
 draft: false
 author: 插画师
 tags: ["hugo"]
+categories: ["Tech"]
 ---
 
 ## 自定义分类

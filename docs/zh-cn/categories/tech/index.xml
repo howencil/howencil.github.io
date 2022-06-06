@@ -1,0 +1,47 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tech - 分类 - XXOXXSXX</title>
+        <link>http://example.org/zh-cn/categories/tech/</link>
+        <description>Tech - 分类 - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Jun 2022 19:44:01 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/categories/tech/" rel="self" type="application/rss+xml" /><item>
+    <title>配置多个Git账号</title>
+    <link>http://example.org/zh-cn/posts/%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E8%B4%A6%E5%8F%B7/</link>
+    <pubDate>Mon, 06 Jun 2022 19:44:01 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E8%B4%A6%E5%8F%B7/</guid>
+    <description><![CDATA[参考文章]]></description>
+</item>
+<item>
+    <title>使用hugo</title>
+    <link>http://example.org/zh-cn/posts/%E4%BD%BF%E7%94%A8hugo/</link>
+    <pubDate>Mon, 06 Jun 2022 19:42:09 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E4%BD%BF%E7%94%A8hugo/</guid>
+    <description><![CDATA[参考文章]]></description>
+</item>
+<item>
+    <title>Hugo配置主题LoveIt</title>
+    <link>http://example.org/zh-cn/posts/hugo%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98loveit/</link>
+    <pubDate>Mon, 06 Jun 2022 14:58:02 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/hugo%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98loveit/</guid>
+    <description><![CDATA[参考文章]]></description>
+</item>
+<item>
+    <title>Hugo添加tags等分类</title>
+    <link>http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/</link>
+    <pubDate>Mon, 06 Jun 2022 14:53:34 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/</guid>
+    <description><![CDATA[自定义分类 Hugo是支持用户自定义分类的，这个称为taxonomy，可以来对网页内容进行逻辑划分，详情可以在这里查看。 分类taxonomy有]]></description>
+</item>
+<item>
+    <title>Hugo文章模板的前置参数</title>
+    <link>http://example.org/zh-cn/posts/hugo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%89%8D%E7%BD%AE%E5%8F%82%E6%95%B0/</link>
+    <pubDate>Mon, 06 Jun 2022 14:35:55 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/hugo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%89%8D%E7%BD%AE%E5%8F%82%E6%95%B0/</guid>
+    <description><![CDATA[title: 文章标题. subtitle: 文章副标题. date: 这篇文章创建的日期时间. 它通常是从文章的前置参数中的 date 字段获取的, 但是也可以在 网站配置 中设置. lastmod: 上次修改内容的日]]></description>
+</item>
+</channel>
+</rss>

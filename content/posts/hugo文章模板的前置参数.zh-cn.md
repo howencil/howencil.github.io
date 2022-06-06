@@ -5,6 +5,7 @@ date: 2022-06-06T14:35:55+08:00
 draft: false
 author: 插画师
 tags: ["hugo"]
+categories: ["Tech"]
 ---
 
 - **title**: 文章标题.
