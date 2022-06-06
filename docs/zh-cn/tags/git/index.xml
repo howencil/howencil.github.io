@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Git - 标签 - XXOXXSXX</title>
+        <link>http://example.org/zh-cn/tags/git/</link>
+        <description>Git - 标签 - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Jun 2022 19:44:01 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/git/" rel="self" type="application/rss+xml" /><item>
+    <title>配置多个Git账号</title>
+    <link>http://example.org/zh-cn/posts/%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E8%B4%A6%E5%8F%B7/</link>
+    <pubDate>Mon, 06 Jun 2022 19:44:01 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E8%B4%A6%E5%8F%B7/</guid>
+    <description><![CDATA[参考文章]]></description>
+</item>
+</channel>
+</rss>

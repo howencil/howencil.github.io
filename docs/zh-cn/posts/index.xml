@@ -3,7 +3,23 @@
         <title>所有文章 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/posts/</link>
         <description>所有文章 | XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Jun 2022 14:58:02 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Jun 2022 19:44:01 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>配置多个Git账号</title>
+    <link>http://example.org/zh-cn/posts/%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E8%B4%A6%E5%8F%B7/</link>
+    <pubDate>Mon, 06 Jun 2022 19:44:01 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E8%B4%A6%E5%8F%B7/</guid>
+    <description><![CDATA[参考文章]]></description>
+</item>
+<item>
+    <title>使用hugo</title>
+    <link>http://example.org/zh-cn/posts/%E4%BD%BF%E7%94%A8hugo/</link>
+    <pubDate>Mon, 06 Jun 2022 19:42:09 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E4%BD%BF%E7%94%A8hugo/</guid>
+    <description><![CDATA[参考文章]]></description>
+</item>
+<item>
     <title>Hugo配置主题LoveIt</title>
     <link>http://example.org/zh-cn/posts/hugo%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98loveit/</link>
     <pubDate>Mon, 06 Jun 2022 14:58:02 &#43;0800</pubDate>
