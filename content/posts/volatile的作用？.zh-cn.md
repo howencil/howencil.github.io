@@ -97,4 +97,4 @@ public class Person {
     }  
 }
 ```
-[volatile关键字的作用及使用场景 | HBC'Blog](https://corbinhu.github.io/2020/04/15/use-volatile-scens/)
+> [volatile关键字的作用及使用场景 | HBC'Blog](https://corbinhu.github.io/2020/04/15/use-volatile-scens/)

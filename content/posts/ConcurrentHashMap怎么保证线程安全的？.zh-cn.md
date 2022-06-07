@@ -266,4 +266,4 @@ public V get(Object key) {
 ```
 **这里的Node节点里的val节点和下一个节点next都是使用了volatile做修饰的。也就是说在修改节点值时和插入节点值是，线程之间都是可见的。这样就可以在不加锁的情况下使用get方法能获取到最新的值，保证了多线程下的同步，保证了线程安全。**
 
-[ConcurrentHashMap 怎么样去保证线程安全的, 读操作为什么不需要加锁？ - SegmentFault 思否](https://segmentfault.com/a/1190000023313702)
+> [ConcurrentHashMap 怎么样去保证线程安全的, 读操作为什么不需要加锁？ - SegmentFault 思否](https://segmentfault.com/a/1190000023313702)

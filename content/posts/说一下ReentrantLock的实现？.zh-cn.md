@@ -168,4 +168,4 @@ protected final boolean tryRelease(int releases) {
 ###### 4.全文总结
 **ReentrantLock是一种可重入的，可实现公平性的互斥锁，它的设计基于AQS框架，可重入和公平性的实现逻辑都不难理解。每重入一次，state就加1，当然在释放的时候，也得一层一层地释放。至于公平性，在尝试获取锁的时候多了一个判断：是否有比自己申请早的线程在同步队列中等待，如果有，去等待；如果没有，才允许去抢占。**
 
-[ReentrantLock实现原理及源码分析 - dreamcatcher-cx - 博客园](https://www.cnblogs.com/chengxiao/p/7255941.html)
+> [ReentrantLock实现原理及源码分析 - dreamcatcher-cx - 博客园](https://www.cnblogs.com/chengxiao/p/7255941.html)
