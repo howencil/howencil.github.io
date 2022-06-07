@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性 - XXOXXSXX</title><meta name="Description" content="I don&#39;t give a fuck"><meta property="og:title" content="如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性" />
+<meta property="og:description" content="1.如何保证消息不重复消费 1.出现重复消费的场景 首先各类消息中间件都有可能出现消息重复消费的问题，因为此类问题通常不是由MQ来保证的，而是消" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-07T16:18:14+08:00" />
+<meta property="article:modified_time" content="2022-06-07T16:18:14+08:00" /><meta property="og:site_name" content="XXOXXSXX" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性"/>
+<meta name="twitter:description" content="1.如何保证消息不重复消费 1.出现重复消费的场景 首先各类消息中间件都有可能出现消息重复消费的问题，因为此类问题通常不是由MQ来保证的，而是消"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/" /><link rel="prev" href="http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" /><link rel="next" href="http://example.org/zh-cn/posts/%E9%99%90%E6%B5%81%E7%AE%97%E6%B3%95%E4%B8%AD%E7%9A%84%E4%BB%A4%E7%89%8C%E8%B7%9F%E6%BC%8F%E6%96%97%E5%8C%BA%E5%88%ABzuul%E4%BD%9C%E7%94%A8/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/zh-cn\/posts\/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7\/"
+        },"genre": "posts","keywords": "消息中间件MQ","wordcount":  1897 ,
+        "url": "http:\/\/example.org\/zh-cn\/posts\/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7\/","datePublished": "2022-06-07T16:18:14+08:00","dateModified": "2022-06-07T16:18:14+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "插画师"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/" selected>简体中文</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="">文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-07">2022-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1897 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1如何保证消息不重复消费">1.如何保证消息不重复消费</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#2如何保证消息不丢失">2.如何保证消息不丢失</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1如何保证消息不重复消费">1.如何保证消息不重复消费</h2>
+<h4 id="1出现重复消费的场景">1.出现重复消费的场景</h4>
+<ol>
+<li>首先各类消息中间件都有可能出现消息重复消费的问题，因为此类问题通常不是由MQ来保证的，而是消费方自己保证。</li>
+<li>举例kafka来说明重复消费问题，kafka有一个offset的概念，每个消息写进去，都会有一个offset代表此条消息的序号，然后consumer消费了数据之后，每隔一段时间，会把自己消费过的消息的offset提交，代表已经消费过了，下次就是重启，kafka就会让消费者从上次消费到的offset来继续消费。<em>但凡事有例外</em>，如果consumer已经消费了数据，但是还没来得及提交offset就已经挂了，那么重启之后就会收到重复数据。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/%e5%a6%82%e4%bd%95%e4%bf%9d%e8%af%81%e6%b6%88%e6%81%af%e4%b8%8d%e9%87%8d%e5%a4%8d%e6%b6%88%e8%b4%b9%ef%bc%8c%e5%a6%82%e4%bd%95%e4%bf%9d%e8%af%81%e6%b6%88%e6%81%af%e4%b8%8d%e4%b8%a2%e5%a4%b1%ef%bc%8c%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e6%b6%88%e6%81%af%e6%b6%88%e8%b4%b9%e9%a1%ba%e5%ba%8f%e6%80%a7/1.png"
+        data-srcset="/%e5%a6%82%e4%bd%95%e4%bf%9d%e8%af%81%e6%b6%88%e6%81%af%e4%b8%8d%e9%87%8d%e5%a4%8d%e6%b6%88%e8%b4%b9%ef%bc%8c%e5%a6%82%e4%bd%95%e4%bf%9d%e8%af%81%e6%b6%88%e6%81%af%e4%b8%8d%e4%b8%a2%e5%a4%b1%ef%bc%8c%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e6%b6%88%e6%81%af%e6%b6%88%e8%b4%b9%e9%a1%ba%e5%ba%8f%e6%80%a7/1.png, /%e5%a6%82%e4%bd%95%e4%bf%9d%e8%af%81%e6%b6%88%e6%81%af%e4%b8%8d%e9%87%8d%e5%a4%8d%e6%b6%88%e8%b4%b9%ef%bc%8c%e5%a6%82%e4%bd%95%e4%bf%9d%e8%af%81%e6%b6%88%e6%81%af%e4%b8%8d%e4%b8%a2%e5%a4%b1%ef%bc%8c%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e6%b6%88%e6%81%af%e6%b6%88%e8%b4%b9%e9%a1%ba%e5%ba%8f%e6%80%a7/1.png 1.5x, /%e5%a6%82%e4%bd%95%e4%bf%9d%e8%af%81%e6%b6%88%e6%81%af%e4%b8%8d%e9%87%8d%e5%a4%8d%e6%b6%88%e8%b4%b9%ef%bc%8c%e5%a6%82%e4%bd%95%e4%bf%9d%e8%af%81%e6%b6%88%e6%81%af%e4%b8%8d%e4%b8%a2%e5%a4%b1%ef%bc%8c%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e6%b6%88%e6%81%af%e6%b6%88%e8%b4%b9%e9%a1%ba%e5%ba%8f%e6%80%a7/1.png 2x"
+        data-sizes="auto"
+        alt="/如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性/1.png"
+        title="/如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性/1.png" /></li>
+</ol>
+<h4 id="2保证幂等性">2.保证幂等性</h4>
+<ol>
+<li>可在内存中维护一个set，只要从消息队列中获取到一个消息，先查询这个消息在不在set里，如果在表示已消费过，直接丢弃；如果不在，则在消费后将其放入set中。</li>
+<li>如果要写数据库，可以拿唯一键先去数据库查询，如果不存在则写入，如果存在则更新或者直接丢弃。</li>
+<li>如果是写Redis那就没问题，每次都是set，具有天然的幂等性。</li>
+<li>让生产者发送消息时，每条消息添加一个全局的唯一ID，然后消费时，将该ID保存到Redis里。消费时先去Redis里查询，根据情况进行消费或丢弃。</li>
+<li>数据库操作可以设置唯一键，防止重复数据插入，这样插入只会报错而不会插入重复数据。</li>
+</ol>
+<h2 id="2如何保证消息不丢失">2.如何保证消息不丢失</h2>
+<blockquote>
+<p><a href="https://juejin.cn/post/6844903849099018253" target="_blank" rel="noopener noreffer">关于MQ的几件小事（四）如何保证消息不丢失 - 掘金</a></p>
+</blockquote>
+<h4 id="1丢失数据的场景">1.丢失数据的场景</h4>
+<h6 id="1rabbitmq">1.RabbitMQ</h6>
+<ol>
+<li><strong>生产者丢失数据：</strong> 生产者在发送数据到mq时，传输过程中可能会因为网络等问题而将数据弄丢。
+<ol>
+<li><strong>1.RabbitMQ开启事务功能：</strong> 在生产者发送数据之前开启事务，然后发送消息，如果消息没有成功被RabbitMQ接收到，那么生产者就会收到异常报错，这时候就可以回滚事务，然后尝试重新发送，如果收到了消息，则提交事务。
+2.**缺点：**RabbitMQ事务已开启，就会变成同步阻塞操作，生产者会阻塞等待是否发送成功，太消耗性能会造成吞吐量下降。</li>
+<li><strong>1.开启confirm模式（最常用的方案）：</strong> 在生产者哪里设置开启了confirm模式之后，每次写的消息都会分配一个唯一的ID，然后写入RabbitMQ后，RabbitMQ会回传一个ack消息，代表消息发送成功；如果RabbitMQ没能处理这个消息，会回调一个nack接口，代表消息发送失败，可以进行重试。结合这个机制可以自己在内存里维护每个消息的ID，如果超过一定时间还没接收到这个消息的回调，那么可以进行重发。</li>
+<li><strong>二者不同：</strong> 事务机制是同步的，提交一个事务之后会造成阻塞，但confirm是异步的，发送消息之后可以接着发送下一个消息，然后RabbitMQ会回调告知成功与否。<em>一般在生产者这块避免丢失，都是用confirm机制</em>。</li>
+</ol>
+</li>
+<li><strong>RabbitMQ自己丢失数据：</strong> 1.如果没有RabbitMQ的持久化，那么RabbitMQ一旦重启，那么数据就丢失了；2.RabbitMQ开启了持久化，但是还没来得及持久化自己就挂了，这样可能导致一部分数据丢失。
+<ol>
+<li><strong>设置持久化：</strong> 设置持久化有2个步骤：1.撕烂queue时将其设置为持久化，这样就可以保证RabbitMQ持久化queue的元数据，但不会持久化queue里的数据；2.发送消息时将消息的deliveryMode设置为2，这样消息就会被设置为持久化方式，此时RabbitMQ就会将消息持久化到磁盘上。<em>必须要同时开启这2个才可以。</em></li>
+<li>持久化可以合生产者的confirm机制结合起来，只有持久化到磁盘后，才会通知生产者ack，这样就算在持久化之前RabbitMQ挂了，数据丢了，生产者没有收到ack回调也会进行消息重发。</li>
+</ol>
+</li>
+<li><strong>消费者弄丢数据：</strong> 消费者在消费时，刚消费到还没处理，消费者自己挂了，重启之后，RabbitMQ认为你已经消费过了，然后就丢了数据。
+<ol>
+<li><strong>消费者弄丢了数据：</strong> 使用RabbitMQ提供的ack机制，首先关闭RabbitMQ的自动ack，然后每次在确保处理完这个消息后手动调用ack，这样可以避免消息还没有处理完就ack。</li>
+</ol>
+</li>
+</ol>
+<h6 id="2kafka">2.kafka</h6>
+<ol>
+<li><strong>消费者弄丢数据：</strong> 消费者消费到消息后，自动提交了offset，但是在处理消息时自己挂掉了，那么这条消息就丢失了。
+<ol>
+<li><strong>解决方案：</strong> 关闭自动提交offset，在自己处理完毕之后手动提交offset，这样就不会丢失数据。</li>
+</ol>
+</li>
+<li><strong>kafka弄丢数据：</strong> 比如kafka的某个broker宕机了，然后重新选举partition的leader时。如果此时follow还没来得及同步数据，leader就挂了，然后某个follow成为了leader，它就少了一部分数据。</li>
+<li><strong>生产者弄丢数据：</strong> 生产者没有设置相应的策略，发送过程中丢失数据。</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-06-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/" data-title="如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性" data-hashtags="消息中间件MQ"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/" data-hashtag="消息中间件MQ"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/" data-title="如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/" data-title="如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/" data-title="如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6mq/">消息中间件MQ</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" class="prev" rel="prev" title="数据库的四大特性"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>数据库的四大特性</a>
+            <a href="/zh-cn/posts/%E9%99%90%E6%B5%81%E7%AE%97%E6%B3%95%E4%B8%AD%E7%9A%84%E4%BB%A4%E7%89%8C%E8%B7%9F%E6%BC%8F%E6%96%97%E5%8C%BA%E5%88%ABzuul%E4%BD%9C%E7%94%A8/" class="next" rel="next" title="限流算法中的令牌跟漏斗区别。Zuul作用">限流算法中的令牌跟漏斗区别。Zuul作用<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
