@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Java - 标签 - XXOXXSXX</title>
+        <link>http://example.org/zh-cn/tags/java/</link>
+        <description>Java - 标签 - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Jun 2022 10:31:14 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>线程池是怎么配置的？线程池的执行流程？</title>
+    <link>http://example.org/zh-cn/posts/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%98%AF%E6%80%8E%E4%B9%88%E9%85%8D%E7%BD%AE%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/</link>
+    <pubDate>Tue, 07 Jun 2022 10:31:14 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%98%AF%E6%80%8E%E4%B9%88%E9%85%8D%E7%BD%AE%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/</guid>
+    <description><![CDATA[1.线程池如何配置 线程池的主要参数： 核心线程数 最大线程数 空闲时间 时间单位 拒绝策略 任务队列 核心线程数量大小选择 | 看业务选择 CPU密集型：核心数]]></description>
+</item>
+</channel>
+</rss>
