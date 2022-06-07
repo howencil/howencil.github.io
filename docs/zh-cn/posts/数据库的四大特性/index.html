@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>数据库的四大特性 - XXOXXSXX</title><meta name="Description" content="I don&#39;t give a fuck"><meta property="og:title" content="数据库的四大特性" />
+<meta property="og:description" content="1.4大特性 原子性：事务的所有SQL操作作为原子工作单位执行，要么全部执行，要么全部不执行； 一致性：事务完成后，所有数据的状态都是一致的，比" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-07T15:31:24+08:00" />
+<meta property="article:modified_time" content="2022-06-07T15:31:24+08:00" /><meta property="og:site_name" content="XXOXXSXX" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据库的四大特性"/>
+<meta name="twitter:description" content="1.4大特性 原子性：事务的所有SQL操作作为原子工作单位执行，要么全部执行，要么全部不执行； 一致性：事务完成后，所有数据的状态都是一致的，比"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" /><link rel="prev" href="http://example.org/zh-cn/posts/volatile%E7%9A%84%E4%BD%9C%E7%94%A8/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "数据库的四大特性",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/zh-cn\/posts\/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7\/"
+        },"genre": "posts","keywords": "Java","wordcount":  1750 ,
+        "url": "http:\/\/example.org\/zh-cn\/posts\/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7\/","datePublished": "2022-06-07T15:31:24+08:00","dateModified": "2022-06-07T15:31:24+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "插画师"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" selected>简体中文</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="">文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">数据库的四大特性</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-07">2022-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1750 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#14大特性">1.4大特性</a></li>
+    <li><a href="#24种隔离级别">2.4种隔离级别</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#3原子性的实现">3.原子性的实现</a></li>
+    <li><a href="#4持久性的实现">4.持久性的实现</a></li>
+    <li><a href="#5日志文件的刷新策略">5.日志文件的刷新策略</a></li>
+    <li><a href="#6隔离性的实现">6.隔离性的实现</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="14大特性">1.4大特性</h2>
+<ol>
+<li>原子性：<em>事务的所有SQL操作作为原子工作单位执行，要么全部执行，要么全部不执行；</em></li>
+<li>一致性：<em>事务完成后，所有数据的状态都是一致的，比如说转账，A账户减去了100，B账户则必定加上了100；</em></li>
+<li>隔离性：<em>如果有多个事务执行，每个事务做出的修改必须与其他事务隔离；</em></li>
+<li>持久性：<em>事务完成后，对数据库数据的修改被持久化存储。</em></li>
+</ol>
+<h2 id="24种隔离级别">2.4种隔离级别</h2>
+<ol>
+<li>读未提交：脏读、不可重复读、幻读</li>
+<li>读已提交：不可重复读、幻读</li>
+<li>可重复度：幻读</li>
+<li>可串行化：无</li>
+</ol>
+<h5 id="1脏读读取未提交的数据">1.脏读：读取未提交的数据</h5>
+<h5 id="2不可重复读前后多次读取数据内容不一致">2.不可重复读：前后多次读取，数据内容不一致</h5>
+<h5 id="3幻读前后多次读取数据总量不一致">3.幻读：前后多次读取，数据总量不一致</h5>
+<p><strong>不可重复读和幻读有何区别？</strong></p>
+<ol>
+<li><strong>不可重复读是读取了其他事务更改的数据，针对<code>update</code>操作；解决方案：使用行级锁，锁定该行，事务A多次读取操作完成后才释放该锁，这个时候才允许其他事务更改刚才的数据。
+PS:只有通过索引条件检索数据，InnoDB 才使用行级锁，否则，InnoDB 将使用表锁。</strong></li>
+<li><strong>幻读是读取了其他事务新增的数据，针对<code>insert</code>和<code>delete</code>操作；解决方案：使用表级锁，锁定整张表，事务A多次读取数据总量后才释放锁，这个时候才允许其他事务新增数据。</strong></li>
+</ol>
+<h2 id="3原子性的实现">3.原子性的实现</h2>
+<p><strong>MySQL数据库事务的原子性是通过<code>undo log</code>来实现的。</strong>
+事务所有的修改操作（增删改）的<em>相反</em>操作都会写入<code>undo log</code>。比如事务执行了一条<code>insert</code>语句，那么<code>undo log</code>就会记录一条相应的<code>delete</code>语句。所以<code>undo log</code>是一个逻辑文件，记录的是相应的SQL语句。一旦故障，导致事务无法成功提交，系统则会执行<code>undo log</code>中相应的撤销操作，达到事务回滚的目的。
+<code>undo log</code>也可以实现MVCC（多个并发版本控制）。</p>
+<h2 id="4持久性的实现">4.持久性的实现</h2>
+<p><strong>MySQL数据库事务的持久性是通过<code>redo log</code>实现的。</strong>
+事务的所有修改操作（增删改），数据库都会生产一条<code>redo</code>日志记录到<code>redo log</code>。区别于<code>undo log</code>记录SQL语句，<code>redo log</code>记录的是事务对数据的哪个数据页做了什么修改，属于物理日志。
+redo日志应用场景：数据系统直接崩溃，需要进行恢复，一般数据库都会使用按时间点备份的策略。首先将数据库恢复到最近备份的时间点状态，之后读取该时间点之后的<code>redo log</code>记录，重新执行相应操作，达到最终恢复的目的。</p>
+<h2 id="5日志文件的刷新策略">5.日志文件的刷新策略</h2>
+<p><code>undo log</code> 和<code>redo log</code>并不是直接写入磁盘，而是先写入<code>log buffer</code>，再等待何时的时机同步到<code>OS buffer</code>，再由操作系统决定刷新到磁盘的时间。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%9b%9b%e5%a4%a7%e7%89%b9%e6%80%a7/1.png"
+        data-srcset="/%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%9b%9b%e5%a4%a7%e7%89%b9%e6%80%a7/1.png, /%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%9b%9b%e5%a4%a7%e7%89%b9%e6%80%a7/1.png 1.5x, /%e6%95%b0%e6%8d%ae%e5%ba%93%e7%9a%84%e5%9b%9b%e5%a4%a7%e7%89%b9%e6%80%a7/1.png 2x"
+        data-sizes="auto"
+        alt="/数据库的四大特性/1.png"
+        title="/数据库的四大特性/1.png" /></p>
+<p>MySQL主要由3种日志刷新策略，默认是第1种。3种策略，安全性依次下降，效率依次上升。</p>
+<ol>
+<li>每次事务提交写入<code>OS buffer</code>，并调用<code>fsync</code>刷新到磁盘；</li>
+<li>每秒写入<code>OS buffer</code>,并调用<code>fsync</code>刷新到磁盘；</li>
+<li>每秒提交写入<code>OS buffer</code>，然后每秒调用<code>fsync</code>刷新到磁盘。</li>
+</ol>
+<h2 id="6隔离性的实现">6.隔离性的实现</h2>
+<h5 id="1读已提交允许可重复读幻读">1.读已提交（允许可重复读、幻读）</h5>
+<p>实现策略：<strong>数据的读取不加锁，数据的写入、修改、删除需要加行级锁，可以克服脏读，但无法避免不可重复读。</strong></p>
+<h5 id="2可重复读允许幻读">2.可重复读（允许幻读）</h5>
+<p>实现策略：<strong>MVCC（多个版本控制）策略</strong>
+<strong>行级锁是一个悲观锁，而MVCC是一个乐观锁，乐观锁在一定程度上可以避免加锁操作，因此开销更低。</strong>
+<strong>MVCC的具体实现：通过在每行记录后面保存2个隐藏的列来实现，1个保存了行的创建时间，1个保存了行的过期时间（删除时间），这里的时间并不是时间戳，而是系统版本号，每开始一个新事物，系统版本号就会递增。</strong></p>
+<ul>
+<li><code>select</code>操作：
+<ul>
+<li>只查找版本早于（包含等于）当前事务版本的数据行。可以确保数据读取的行，要么是事务开始前就已存在，或事务自身插入或修改的记录。</li>
+<li>行的删除版本要么未定义，要么大于当前事务版本号。可以确保事务读取的行，在事务开始前未删除。</li>
+</ul>
+</li>
+<li><code>insert</code>操作：将新插入的行保存当前版本号为行的版本号。</li>
+<li><code>delete</code>操作：将删除的行保存当前版本号为删除标识。</li>
+<li><code>update</code>操作：变为<code>insert</code>和<code>delete</code>操作的组合，<code>insert</code>的行保存当前版本号为行的版本号，<code>delete</code>则保存当前版本号到原来的行做为删除标识。</li>
+</ul>
+<p><strong>通过MVCC策略，可以确保一个事务里面读取的是同一个数据库版本快照。</strong></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/zycxnanwang/article/details/105742160" target="_blank" rel="noopener noreffer">MySQL事务四大特性实现：面试官的终究拷问_zycxnanwang的博客-CSDN博客_mysql事务四大特性的实现</a></p>
+</blockquote>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-06-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" data-title="数据库的四大特性" data-hashtags="Java"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" data-hashtag="Java"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" data-title="数据库的四大特性"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" data-title="数据库的四大特性"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/" data-title="数据库的四大特性"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/java/">Java</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/volatile%E7%9A%84%E4%BD%9C%E7%94%A8/" class="prev" rel="prev" title="Volatile的作用？"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Volatile的作用？</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

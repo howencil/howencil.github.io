@@ -3,9 +3,17 @@
         <title>XXOXXSXX</title>
         <link>http://example.org/zh-cn/</link>
         <description>I don&#39;t give a fuck</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Jun 2022 15:19:40 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Jun 2022 15:31:24 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/zh-cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>数据库的四大特性</title>
+    <link>http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/</link>
+    <pubDate>Tue, 07 Jun 2022 15:31:24 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/</guid>
+    <description><![CDATA[1.4大特性 原子性：事务的所有SQL操作作为原子工作单位执行，要么全部执行，要么全部不执行； 一致性：事务完成后，所有数据的状态都是一致的，比]]></description>
+</item>
+<item>
     <title>Volatile的作用？</title>
     <link>http://example.org/zh-cn/posts/volatile%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
     <pubDate>Tue, 07 Jun 2022 15:19:40 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <pubDate>Mon, 06 Jun 2022 19:42:09 &#43;0800</pubDate>
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/%E4%BD%BF%E7%94%A8hugo/</guid>
-    <description><![CDATA[参考文章]]></description>
-</item>
-<item>
-    <title>Hugo配置主题LoveIt</title>
-    <link>http://example.org/zh-cn/posts/hugo%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98loveit/</link>
-    <pubDate>Mon, 06 Jun 2022 14:58:02 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/zh-cn/posts/hugo%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98loveit/</guid>
     <description><![CDATA[参考文章]]></description>
 </item>
 </channel>
