@@ -3,7 +3,55 @@
         <title>Tech - 分类 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/categories/tech/</link>
         <description>Tech - 分类 - XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Jun 2022 10:31:14 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/categories/tech/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Jun 2022 15:19:40 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/categories/tech/" rel="self" type="application/rss+xml" /><item>
+    <title>Volatile的作用？</title>
+    <link>http://example.org/zh-cn/posts/volatile%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
+    <pubDate>Tue, 07 Jun 2022 15:19:40 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/volatile%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
+    <description><![CDATA[1.volatile的作用 能保证共享变量的可见性，即一个线程对共享变量进行修改，其他线程能够立即获得修改后的值。（volatile变量修改后]]></description>
+</item>
+<item>
+    <title>说一下ReentrantLock的实现？</title>
+    <link>http://example.org/zh-cn/posts/%E8%AF%B4%E4%B8%80%E4%B8%8Breentrantlock%E7%9A%84%E5%AE%9E%E7%8E%B0/</link>
+    <pubDate>Tue, 07 Jun 2022 15:16:02 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E8%AF%B4%E4%B8%80%E4%B8%8Breentrantlock%E7%9A%84%E5%AE%9E%E7%8E%B0/</guid>
+    <description><![CDATA[1.什么是ReentrantLock ReentrantLock是一个可重入的互斥锁。 可重入性：可以支持一个线程对锁的重复获取 公平锁/非公平锁]]></description>
+</item>
+<item>
+    <title>ConcurrentHashMap怎么保证线程安全的？</title>
+    <link>http://example.org/zh-cn/posts/concurrenthashmap%E6%80%8E%E4%B9%88%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84/</link>
+    <pubDate>Tue, 07 Jun 2022 15:14:26 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/concurrenthashmap%E6%80%8E%E4%B9%88%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84/</guid>
+    <description><![CDATA[1.先说结论 ConcurrentHashMap主要使用的是CAS+自旋+synchronized+多重check来保证在初始化、新增、扩容时]]></description>
+</item>
+<item>
+    <title>并发操作hashmap会出现什么问题？</title>
+    <link>http://example.org/zh-cn/posts/%E5%B9%B6%E5%8F%91%E6%93%8D%E4%BD%9Chashmap%E4%BC%9A%E5%87%BA%E7%8E%B0%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Tue, 07 Jun 2022 15:13:07 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E5%B9%B6%E5%8F%91%E6%93%8D%E4%BD%9Chashmap%E4%BC%9A%E5%87%BA%E7%8E%B0%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[HashMap多线程并发问题分析-正常和异常的rehash1(阿里) - aspirant - 博客园 1.可能引发的问题 多线程put后可能导致get死循环； 多线程]]></description>
+</item>
+<item>
+    <title>Hashmap的原理？hashmap为什么用红黑树？</title>
+    <link>http://example.org/zh-cn/posts/hashmap%E7%9A%84%E5%8E%9F%E7%90%86hashmap%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E7%BA%A2%E9%BB%91%E6%A0%91/</link>
+    <pubDate>Tue, 07 Jun 2022 15:07:41 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/hashmap%E7%9A%84%E5%8E%9F%E7%90%86hashmap%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E7%BA%A2%E9%BB%91%E6%A0%91/</guid>
+    <description><![CDATA[1.数据结构 数组+链表/红黑树 1.什么是Node HashMap类有一个非常重要的属性Node&lt;K,V&gt;，是HashMap的一个内]]></description>
+</item>
+<item>
+    <title>ForkJoinPool和一般的线程池有什么区别？</title>
+    <link>http://example.org/zh-cn/posts/forkjoinpool%E5%92%8C%E4%B8%80%E8%88%AC%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/</link>
+    <pubDate>Tue, 07 Jun 2022 15:03:47 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/forkjoinpool%E5%92%8C%E4%B8%80%E8%88%AC%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/</guid>
+    <description><![CDATA[说在前面 首先是结论： ForkJoinPool不是为了替代ExecutorService，而是他的补充，在某些场景下性能比ExecutorSe]]></description>
+</item>
+<item>
     <title>线程池是怎么配置的？线程池的执行流程？</title>
     <link>http://example.org/zh-cn/posts/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%98%AF%E6%80%8E%E4%B9%88%E9%85%8D%E7%BD%AE%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/</link>
     <pubDate>Tue, 07 Jun 2022 10:31:14 &#43;0800</pubDate>
@@ -34,22 +82,6 @@
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/hugo%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98loveit/</guid>
     <description><![CDATA[参考文章]]></description>
-</item>
-<item>
-    <title>Hugo添加tags等分类</title>
-    <link>http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/</link>
-    <pubDate>Mon, 06 Jun 2022 14:53:34 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/zh-cn/posts/hugo%E6%B7%BB%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/</guid>
-    <description><![CDATA[自定义分类 Hugo是支持用户自定义分类的，这个称为taxonomy，可以来对网页内容进行逻辑划分，详情可以在这里查看。 分类taxonomy有]]></description>
-</item>
-<item>
-    <title>Hugo文章模板的前置参数</title>
-    <link>http://example.org/zh-cn/posts/hugo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%89%8D%E7%BD%AE%E5%8F%82%E6%95%B0/</link>
-    <pubDate>Mon, 06 Jun 2022 14:35:55 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/zh-cn/posts/hugo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%89%8D%E7%BD%AE%E5%8F%82%E6%95%B0/</guid>
-    <description><![CDATA[title: 文章标题. subtitle: 文章副标题. date: 这篇文章创建的日期时间. 它通常是从文章的前置参数中的 date 字段获取的, 但是也可以在 网站配置 中设置. lastmod: 上次修改内容的日]]></description>
 </item>
 </channel>
 </rss>
