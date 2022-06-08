@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>MySQL - 标签 - XXOXXSXX</title>
+        <link>http://example.org/zh-cn/tags/mysql/</link>
+        <description>MySQL - 标签 - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Jun 2022 15:31:24 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+    <title>数据库的四大特性</title>
+    <link>http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/</link>
+    <pubDate>Tue, 07 Jun 2022 15:31:24 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/</guid>
+    <description><![CDATA[1.4大特性 原子性：事务的所有SQL操作作为原子工作单位执行，要么全部执行，要么全部不执行； 一致性：事务完成后，所有数据的状态都是一致的，比]]></description>
+</item>
+</channel>
+</rss>
