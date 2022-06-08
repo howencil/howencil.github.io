@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>MySQL三大日志 - XXOXXSXX</title><meta name="Description" content="I don&#39;t give a fuck"><meta property="og:title" content="MySQL三大日志" />
+<meta property="og:description" content="1. 三大日志 MySQL的日志系统分为3类： redo log ：重做日志，redolog是InnoDB存储引擎层的日志。作用是确保日志的持久性，防止在发生故障" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-08T18:47:35+08:00" />
+<meta property="article:modified_time" content="2022-06-08T18:47:35+08:00" /><meta property="og:site_name" content="XXOXXSXX" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MySQL三大日志"/>
+<meta name="twitter:description" content="1. 三大日志 MySQL的日志系统分为3类： redo log ：重做日志，redolog是InnoDB存储引擎层的日志。作用是确保日志的持久性，防止在发生故障"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" /><link rel="prev" href="http://example.org/zh-cn/posts/%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%86%99%E5%87%BA%E6%AD%BB%E5%BE%AA%E7%8E%AF%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF%E5%90%8E%E5%A6%82%E4%BD%95%E6%9F%A5%E5%87%BA%E6%AD%A4%E9%97%AE%E9%A2%98/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "MySQL三大日志",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/zh-cn\/posts\/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97\/"
+        },"genre": "posts","keywords": "MySQL","wordcount":  984 ,
+        "url": "http:\/\/example.org\/zh-cn\/posts\/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97\/","datePublished": "2022-06-08T18:47:35+08:00","dateModified": "2022-06-08T18:47:35+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "插画师"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" selected>简体中文</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="">文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">MySQL三大日志</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-08">2022-06-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 984 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="1-三大日志">1. 三大日志</h1>
+<p>MySQL的日志系统分为3类：</p>
+<ol>
+<li><strong>redo log</strong> ：重做日志，redolog是InnoDB存储引擎层的日志。作用是确保日志的持久性，防止在发生故障的时间点，尚有脏页未写入磁盘，在重启MySQL服务时，根据<code>redo log</code> 进行重做，从而达到事务的持久性这一特性。</li>
+<li><strong>undo log</strong>：回滚日志。作用是确保了事务发生之前的数据的一个版本，可以用于回滚，同时可以提供多版本并发控制的读（MVCC），也即非锁定读。</li>
+<li><strong>bin log</strong>：二进制日志，也叫归档日志，是MySQL Server层记录的日志。作用是用于复制，在主从复制中，从库利用主库上的 <code>bin log</code> 进行重播，实现主从同步；也用于数据库基于时间点的还原。</li>
+</ol>
+<h1 id="2redo-log">2.redo log</h1>
+<p>事务的所有修改操作（增删改），数据库都会生产一条<code>redo</code>日志记录到<code>redo log</code>。区别于<code>undo log</code>记录SQL语句，<code>redo log</code>记录的是事务对数据的哪个数据页做了什么修改，属于物理日志。 redo日志应用场景：数据系统直接崩溃，需要进行恢复，一般数据库都会使用按时间点备份的策略。首先将数据库恢复到最近备份的时间点状态，之后读取该时间点之后的<code>redo log</code>记录，重新执行相应操作，达到最终恢复的目的。</p>
+<p><code>redo log</code> 日志的大小是固定的，即记录满了以后就从头循环写。</p>
+<h1 id="3bin-log">3.bin log</h1>
+<ul>
+<li><strong>redo log和 bin log的区别</strong>
+<ol>
+<li><code>redo log</code> 是属于InnoDB层面的，<code>bin log</code> 属于MySQL Server层面的。这样在数据库用别的存储引擎时可以达到一致性的要求。</li>
+<li><code>redo log</code>是物理日志，记录该数据页的更新内容；<code>bin log</code> 是逻辑日志，记录的是这个更新语句的原始逻辑。</li>
+<li><code>redo log</code> 是循环写，日志空间大小固定；<code>bin log</code>是追加写，是指一份写到一定大小时会更换下一个文件，不会覆盖。</li>
+<li><code>bin log</code>可以作为恢复数据使用，主从复制搭建；<code>redo log</code>作为异常宕机或者介质故障后的数据恢复使用。</li>
+</ol>
+</li>
+</ul>
+<h1 id="4undo-log">4.undo log</h1>
+<p><strong><code>InnoDB</code>事务日志包括<code>redo log</code> 和 <code>undo log</code> 。前者是重做日志，提供前滚操作；后者是回滚日志，提供回滚操作。</strong></p>
+<p><em><code>undo log</code>不是<code>redo log</code>的逆向工程，其实两者都算是用来恢复的日志</em></p>
+<ol>
+<li><strong><code>redo log</code>通常是物理日志，记录的是数据页的物理修改，而不是某一行或者某几行修改成什么样，它用来恢复提交后的物理数据页（恢复数据页，且只能恢复到最后一次提交的位置）。</strong></li>
+<li><strong><code>undo log</code>用来回滚行记录到某个版本。<code>undo log</code>一般是逻辑日志，根据每行记录进行记录。</strong></li>
+</ol>
+<blockquote>
+<p>参考文章：<a href="https://blog.csdn.net/u010002184/article/details/88526708" target="_blank" rel="noopener noreffer">MySQL日志系统：redo log、binlog、undo log 区别与作用</a></p>
+</blockquote>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-06-08</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" data-title="MySQL三大日志" data-hashtags="MySQL"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" data-hashtag="MySQL"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" data-title="MySQL三大日志"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" data-title="MySQL三大日志"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" data-title="MySQL三大日志"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/mysql/">MySQL</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%86%99%E5%87%BA%E6%AD%BB%E5%BE%AA%E7%8E%AF%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF%E5%90%8E%E5%A6%82%E4%BD%95%E6%9F%A5%E5%87%BA%E6%AD%A4%E9%97%AE%E9%A2%98/" class="prev" rel="prev" title="开发人员写出死循环，发布上线后如何查出此问题？"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>开发人员写出死循环，发布上线后如何查出此问题？</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
