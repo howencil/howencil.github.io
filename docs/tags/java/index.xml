@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All Posts - XXOXXSXX</title>
-        <link>http://example.org/posts/</link>
-        <description>All Posts | XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 08 Jun 2022 16:07:16 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+        <title>Java - Tag - XXOXXSXX</title>
+        <link>http://example.org/tags/java/</link>
+        <description>Java - Tag - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 08 Jun 2022 16:07:16 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/java/" rel="self" type="application/rss+xml" /><item>
     <title>开发人员写出死循环，发布上线后如何查出此问题？zh Cn</title>
     <link>http://example.org/posts/%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%86%99%E5%87%BA%E6%AD%BB%E5%BE%AA%E7%8E%AF%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF%E5%90%8E%E5%A6%82%E4%BD%95%E6%9F%A5%E5%87%BA%E6%AD%A4%E9%97%AE%E9%A2%98zh-cn/</link>
     <pubDate>Wed, 08 Jun 2022 16:07:16 &#43;0800</pubDate>
