@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>MySQL脏页是什么？ - XXOXXSXX</title><meta name="Description" content="I don&#39;t give a fuck"><meta property="og:title" content="MySQL脏页是什么？" />
+<meta property="og:description" content="1.MySQL脏页 干净页：内存和磁盘中的数据一致。 脏页：内存和磁盘中的数据不一致。 2.为什么会出现脏页 平时很快的更新操作，都是写在内存和日志" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/zh-cn/posts/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-09T14:14:09+08:00" />
+<meta property="article:modified_time" content="2022-06-09T14:14:09+08:00" /><meta property="og:site_name" content="XXOXXSXX" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MySQL脏页是什么？"/>
+<meta name="twitter:description" content="1.MySQL脏页 干净页：内存和磁盘中的数据一致。 脏页：内存和磁盘中的数据不一致。 2.为什么会出现脏页 平时很快的更新操作，都是写在内存和日志"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/zh-cn/posts/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88/" /><link rel="prev" href="http://example.org/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "MySQL脏页是什么？",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/zh-cn\/posts\/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88\/"
+        },"genre": "posts","keywords": "MySQL","wordcount":  737 ,
+        "url": "http:\/\/example.org\/zh-cn\/posts\/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88\/","datePublished": "2022-06-09T14:14:09+08:00","dateModified": "2022-06-09T14:14:09+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "插画师"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88/" selected>简体中文</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="">文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">MySQL脏页是什么？</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-09">2022-06-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 737 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="1mysql脏页">1.MySQL脏页</h1>
+<ul>
+<li>干净页：内存和磁盘中的数据一致。</li>
+<li>脏页：内存和磁盘中的数据不一致。</li>
+</ul>
+<h1 id="2为什么会出现脏页">2.为什么会出现脏页</h1>
+<p><strong>平时很快的更新操作，都是写在内存和日志。并不会马上同步到磁盘数据页，此时内存数据页和磁盘数据页内容不一致，我们称之为脏页。</strong></p>
+<h1 id="3为什么脏页一定要刷新">3.为什么脏页一定要刷新</h1>
+<ul>
+<li>数据只放在缓冲区，会出现==数据库宕机，内存数据丢失==。</li>
+<li><code>redo log</code>如果无限大或者有许多个文件的话，系统中有大量的修改操作，一旦宕机，恢复时间也会非常长。</li>
+</ul>
+<p>所以自然而然，我们就一定<strong>需要把内存中的脏页按照某种规则刷新到磁盘中</strong>，有了这个刷新操作，缓冲区的大小问题和<code>redo log</code>的大小问题都可以得到解决。</p>
+<ul>
+<li>缓冲区不需要无限大了，因为可以持久化到磁盘。</li>
+<li><code>redo log</code>也不需要无限大了，因为一定持久化到磁盘，<code>redo log</code>中对应的那部分就可以释放。</li>
+</ul>
+<h1 id="4刷脏页有下面4种场景">4.刷脏页有下面4种场景</h1>
+<ol>
+<li>当<code>redo log</code> 写满，<code>MySQL</code>就会暂停所有更新操作，将同步这部分的日志对应的脏页同步到磁盘。</li>
+<li>系统内存不足时，需要淘汰一部分数据页，如果淘汰的是脏页，就要先脏页同步到磁盘。</li>
+<li><code>MySQL</code>认为系统空闲时，有机会就同步内存数据到磁盘，这种没有性能问题。</li>
+<li><code>MySQL</code>正常关闭，<code>MySQL</code>会把内存脏页都同步到磁盘上，这样下次<code>MySQL</code>启动时，就可以直接从磁盘上读取数据，启动数据很快。这种没有性能问题。</li>
+</ol>
+<h1 id="5会造成的影响">5.会造成的影响</h1>
+<p><strong>要尽量避免<code>redo log</code>写满，否则整个系统的更新都会停止。此时写的性能为0，必须等待该日志对应的脏页同步完成后，才能继续更新操作，此时就会导致<code>SQL</code>语句执行得很慢。</strong></p>
+<h1 id="6如何刷新">6.如何刷新</h1>
+<p><strong>在<code>InnoDB</code>中有两种刷新规则，称为<code>checkpoint</code> 。</strong></p>
+<ul>
+<li><code>sharp checkpoint</code>：在数据库关闭时，刷新所有脏页到磁盘，这里的有参数控制，默认是开启的。</li>
+<li><code>fuzzy checkpoint</code>：刷新一部分脏页到磁盘中。</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-06-09</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/posts/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88/" data-title="MySQL脏页是什么？" data-hashtags="MySQL"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/posts/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88/" data-hashtag="MySQL"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/zh-cn/posts/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88/" data-title="MySQL脏页是什么？"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/zh-cn/posts/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88/" data-title="MySQL脏页是什么？"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/posts/mysql%E8%84%8F%E9%A1%B5%E6%98%AF%E4%BB%80%E4%B9%88/" data-title="MySQL脏页是什么？"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/mysql/">MySQL</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/mysql%E4%B8%89%E5%A4%A7%E6%97%A5%E5%BF%97/" class="prev" rel="prev" title="MySQL三大日志"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>MySQL三大日志</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
