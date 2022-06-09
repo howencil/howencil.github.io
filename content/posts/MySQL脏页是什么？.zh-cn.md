@@ -44,3 +44,4 @@ categories: ["Tech"]
 - `sharp checkpoint`：在数据库关闭时，刷新所有脏页到磁盘，这里的有参数控制，默认是开启的。
 - `fuzzy checkpoint`：刷新一部分脏页到磁盘中。
 
+> 参考文章：[什么是MySQL脏页](https://www.modb.pro/db/71045)
