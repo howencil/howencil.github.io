@@ -19,7 +19,7 @@ brew install go
 go env -w GOPROXY=https://goproxy.cn,https://goproxy.io,direct
 ```
 
-
+> 参考文章：[「2022 版」轻松搞定 Go 开发环境](https://polarisxu.studygolang.com/posts/go/2022-dev-env/)
 
 
 
