@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Series on XXOXXSXX</title>
-    <link>http://example.org/series/</link>
-    <description>Recent content in Series on XXOXXSXX</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="http://example.org/series/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Series - series - XXOXXSXX</title>
+        <link>http://example.org/series/</link>
+        <description>Series - series - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="http://example.org/series/" rel="self" type="application/rss+xml" /></channel>
 </rss>

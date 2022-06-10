@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on XXOXXSXX</title>
-    <link>http://example.org/fr/categories/</link>
-    <description>Recent content in Categories on XXOXXSXX</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language><atom:link href="http://example.org/fr/categories/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Catégorie - XXOXXSXX</title>
+        <link>http://example.org/fr/categories/</link>
+        <description>Categories - Catégorie - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>fr</language><atom:link href="http://example.org/fr/categories/" rel="self" type="application/rss+xml" /></channel>
 </rss>

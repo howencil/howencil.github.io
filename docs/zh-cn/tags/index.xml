@@ -1,65 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on XXOXXSXX</title>
-    <link>http://example.org/zh-cn/tags/</link>
-    <description>Recent content in Tags on XXOXXSXX</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sat, 11 Jun 2022 02:36:59 +0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Go</title>
-      <link>http://example.org/zh-cn/tags/go/</link>
-      <pubDate>Sat, 11 Jun 2022 02:36:59 +0800</pubDate>
-      
-      <guid>http://example.org/zh-cn/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MySQL</title>
-      <link>http://example.org/zh-cn/tags/mysql/</link>
-      <pubDate>Thu, 09 Jun 2022 14:51:20 +0800</pubDate>
-      
-      <guid>http://example.org/zh-cn/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>http://example.org/zh-cn/tags/java/</link>
-      <pubDate>Wed, 08 Jun 2022 16:07:16 +0800</pubDate>
-      
-      <guid>http://example.org/zh-cn/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>消息中间件MQ</title>
-      <link>http://example.org/zh-cn/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6mq/</link>
-      <pubDate>Tue, 07 Jun 2022 16:18:14 +0800</pubDate>
-      
-      <guid>http://example.org/zh-cn/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6mq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>http://example.org/zh-cn/tags/git/</link>
-      <pubDate>Mon, 06 Jun 2022 19:44:01 +0800</pubDate>
-      
-      <guid>http://example.org/zh-cn/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>http://example.org/zh-cn/tags/hugo/</link>
-      <pubDate>Mon, 06 Jun 2022 19:42:09 +0800</pubDate>
-      
-      <guid>http://example.org/zh-cn/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - 标签 - XXOXXSXX</title>
+        <link>http://example.org/zh-cn/tags/</link>
+        <description>Tags - 标签 - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Jun 2022 02:36:59 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Go</title>
+    <link>http://example.org/zh-cn/tags/go/</link>
+    <pubDate>Sat, 11 Jun 2022 02:36:59 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/zh-cn/tags/go/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>MySQL</title>
+    <link>http://example.org/zh-cn/tags/mysql/</link>
+    <pubDate>Thu, 09 Jun 2022 14:51:20 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/zh-cn/tags/mysql/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Java</title>
+    <link>http://example.org/zh-cn/tags/java/</link>
+    <pubDate>Wed, 08 Jun 2022 16:07:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/zh-cn/tags/java/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>消息中间件MQ</title>
+    <link>http://example.org/zh-cn/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6mq/</link>
+    <pubDate>Tue, 07 Jun 2022 16:18:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/zh-cn/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6mq/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Git</title>
+    <link>http://example.org/zh-cn/tags/git/</link>
+    <pubDate>Mon, 06 Jun 2022 19:44:01 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/zh-cn/tags/git/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>hugo</title>
+    <link>http://example.org/zh-cn/tags/hugo/</link>
+    <pubDate>Mon, 06 Jun 2022 19:42:09 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/zh-cn/tags/hugo/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>
