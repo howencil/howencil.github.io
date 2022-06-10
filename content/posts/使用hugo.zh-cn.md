@@ -7,4 +7,13 @@ tags: ["hugo"]
 categories: ["Tech"]
 ---
 
-> [参考文章](https://zhuanlan.zhihu.com/p/37752930)
+> 参考文章：[如何使用Hugo在GitHub Pages上搭建免费个人网站](https://zhuanlan.zhihu.com/p/37752930)
+
+
+
+> [如何使用Hugo在GitHub Pages上搭建免费个人网站](https://zhuanlan.zhihu.com/p/37752930)
+
+> [如何使用Hugo在GitHub Pages上搭建免费个人网站
+>
+>
+>   ](https://zhuanlan.zhihu.com/p/37752930)
