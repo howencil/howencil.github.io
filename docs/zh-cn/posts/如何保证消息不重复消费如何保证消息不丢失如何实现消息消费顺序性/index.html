@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/zh-cn\/posts\/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7\/"
-        },"genre": "posts","keywords": "消息中间件MQ","wordcount":  2307 ,
+        },"genre": "posts","keywords": "消息中间件MQ","wordcount":  2299 ,
         "url": "http:\/\/example.org\/zh-cn\/posts\/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7\/","datePublished": "2022-06-07T16:18:14+08:00","dateModified": "2022-06-07T16:18:14+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -75,7 +75,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-07">2022-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2307 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-07">2022-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2299 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -147,7 +147,7 @@
 <li><strong>解决方案：</strong> 关闭自动提交offset，在自己处理完毕之后手动提交offset，这样就不会丢失数据。</li>
 <li><strong>kafka弄丢数据：</strong> 比如kafka的某个broker宕机了，然后重新选举partition的leader时。如果此时follow还没来得及同步数据，leader就挂了，然后某个follow成为了leader，它就少了一部分数据。
 <ol>
-<li>**解决方案：**一般要求设置4个参数来保证消息不丢失。
+<li><strong>解决方案：</strong> 一般要求设置4个参数来保证消息不丢失。
 <ol>
 <li>给<code>topic</code>设置<code>replication.factor</code>参数：这个值必须大于1，表示要求每个<code>partition</code>必须有2个副本。</li>
 <li>在<code>kafka</code>服务端设置<code>min.isync.replicas</code>参数：这个值必须大于1，表示要求一个<code>leader</code>至少要感知到至少有1个<code>follower</code>在跟自己保持联系正常同步数据，这样才能保证<code>leader</code>挂了之后还有一个<code>follower</code>。</li>
@@ -159,7 +159,7 @@
 </li>
 <li><strong>生产者弄丢数据：</strong> 生产者没有设置相应的策略，发送过程中丢失数据。
 <ol>
-<li>**解决方案：**如果按照上面的设置了 <code>ack=all</code> ，则一定不会丢失数据，要求是你的 <code>leader</code> 接收到消息，所有的 <code>follower</code> 都同步到了消息之后，才认为本次写入成功了。如果没有满足这个条件，生产者会自动不断地重试，重试无限次。</li>
+<li><strong>解决方案：</strong>  如果按照上面的设置了 <code>ack=all</code> ，则一定不会丢失数据，要求是你的 <code>leader</code> 接收到消息，所有的 <code>follower</code> 都同步到了消息之后，才认为本次写入成功了。如果没有满足这个条件，生产者会自动不断地重试，重试无限次。</li>
 </ol>
 </li>
 </ol>
