@@ -3,7 +3,15 @@
         <title>MySQL - 标签 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/tags/mysql/</link>
         <description>MySQL - 标签 - XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 09 Jun 2022 14:51:20 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Jun 2022 11:34:17 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+    <title>Redis跟MySQL缓存一致性</title>
+    <link>http://example.org/zh-cn/posts/redis%E8%B7%9Fmysql%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/</link>
+    <pubDate>Sat, 11 Jun 2022 11:34:17 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/redis%E8%B7%9Fmysql%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>MySQL的多版本并发控制(MVCC)是什么？</title>
     <link>http://example.org/zh-cn/posts/mysql%E7%9A%84%E5%A4%9A%E7%89%88%E6%9C%AC%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6mvcc%E6%98%AF%E4%BB%80%E4%B9%88/</link>
     <pubDate>Thu, 09 Jun 2022 14:51:20 &#43;0800</pubDate>
