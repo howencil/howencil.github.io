@@ -9,7 +9,7 @@
     <pubDate>Thu, 09 Jun 2022 14:51:20 &#43;0800</pubDate>
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/mysql%E7%9A%84%E5%A4%9A%E7%89%88%E6%9C%AC%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6mvcc%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[1.MVCC的实现 MVCC是通过每行记录后面保存2个隐藏的列来实现的。这两个列，一个保存了行的创建时间，一个保存了行的过期时间（或过期时间）]]></description>
 </item>
 <item>
     <title>MySQL脏页是什么？</title>
