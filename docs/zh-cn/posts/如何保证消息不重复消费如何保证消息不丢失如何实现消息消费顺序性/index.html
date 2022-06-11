@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/zh-cn\/posts\/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7\/"
-        },"genre": "posts","keywords": "消息中间件MQ","wordcount":  1897 ,
+        },"genre": "posts","keywords": "消息中间件MQ","wordcount":  1892 ,
         "url": "http:\/\/example.org\/zh-cn\/posts\/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7\/","datePublished": "2022-06-07T16:18:14+08:00","dateModified": "2022-06-07T16:18:14+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -75,7 +75,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-07">2022-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1897 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-07">2022-06-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1892 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -127,15 +127,14 @@
 <ol>
 <li><strong>生产者丢失数据：</strong> 生产者在发送数据到mq时，传输过程中可能会因为网络等问题而将数据弄丢。
 <ol>
-<li><strong>1.RabbitMQ开启事务功能：</strong> 在生产者发送数据之前开启事务，然后发送消息，如果消息没有成功被RabbitMQ接收到，那么生产者就会收到异常报错，这时候就可以回滚事务，然后尝试重新发送，如果收到了消息，则提交事务。
-2.**缺点：**RabbitMQ事务已开启，就会变成同步阻塞操作，生产者会阻塞等待是否发送成功，太消耗性能会造成吞吐量下降。</li>
+<li><strong>1.RabbitMQ开启事务功能：</strong> 在生产者发送数据之前开启事务，然后发送消息，如果消息没有成功被RabbitMQ接收到，那么生产者就会收到异常报错，这时候就可以回滚事务，然后尝试重新发送，如果收到了消息，则提交事务。 2. <strong>缺点：</strong> RabbitMQ事务已开启，就会变成同步阻塞操作，生产者会阻塞等待是否发送成功，太消耗性能会造成吞吐量下降。</li>
 <li><strong>1.开启confirm模式（最常用的方案）：</strong> 在生产者哪里设置开启了confirm模式之后，每次写的消息都会分配一个唯一的ID，然后写入RabbitMQ后，RabbitMQ会回传一个ack消息，代表消息发送成功；如果RabbitMQ没能处理这个消息，会回调一个nack接口，代表消息发送失败，可以进行重试。结合这个机制可以自己在内存里维护每个消息的ID，如果超过一定时间还没接收到这个消息的回调，那么可以进行重发。</li>
 <li><strong>二者不同：</strong> 事务机制是同步的，提交一个事务之后会造成阻塞，但confirm是异步的，发送消息之后可以接着发送下一个消息，然后RabbitMQ会回调告知成功与否。<em>一般在生产者这块避免丢失，都是用confirm机制</em>。</li>
 </ol>
 </li>
 <li><strong>RabbitMQ自己丢失数据：</strong> 1.如果没有RabbitMQ的持久化，那么RabbitMQ一旦重启，那么数据就丢失了；2.RabbitMQ开启了持久化，但是还没来得及持久化自己就挂了，这样可能导致一部分数据丢失。
 <ol>
-<li><strong>设置持久化：</strong> 设置持久化有2个步骤：1.撕烂queue时将其设置为持久化，这样就可以保证RabbitMQ持久化queue的元数据，但不会持久化queue里的数据；2.发送消息时将消息的deliveryMode设置为2，这样消息就会被设置为持久化方式，此时RabbitMQ就会将消息持久化到磁盘上。<em>必须要同时开启这2个才可以。</em></li>
+<li><strong>设置持久化：</strong> 设置持久化有2个步骤：1.创建queue时将其设置为持久化，这样就可以保证RabbitMQ持久化queue的元数据，但不会持久化queue里的数据；2.发送消息时将消息的deliveryMode设置为2，这样消息就会被设置为持久化方式，此时RabbitMQ就会将消息持久化到磁盘上。<em>必须要同时开启这2个才可以。</em></li>
 <li>持久化可以合生产者的confirm机制结合起来，只有持久化到磁盘后，才会通知生产者ack，这样就算在持久化之前RabbitMQ挂了，数据丢了，生产者没有收到ack回调也会进行消息重发。</li>
 </ol>
 </li>
