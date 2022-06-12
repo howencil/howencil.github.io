@@ -9,7 +9,7 @@
     <pubDate>Sat, 11 Jun 2022 11:34:17 &#43;0800</pubDate>
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/redis%E8%B7%9Fmysql%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[1.前言 网上此类问题的解决方案有很多，大多数是说延迟双删，个人认为这个方法太low了，在实际生产中谁会真的让线程sleep个几百毫秒呢？ 主要]]></description>
 </item>
 <item>
     <title>MySQL的多版本并发控制(MVCC)是什么？</title>
