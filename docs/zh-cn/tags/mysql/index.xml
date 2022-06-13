@@ -3,7 +3,15 @@
         <title>MySQL - 标签 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/tags/mysql/</link>
         <description>MySQL - 标签 - XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Jun 2022 11:34:17 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 13 Jun 2022 10:21:54 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+    <title>MySQL的慢SQL可能的几个原因</title>
+    <link>http://example.org/zh-cn/posts/mysql%E7%9A%84%E6%85%A2sql%E5%8F%AF%E8%83%BD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0/</link>
+    <pubDate>Mon, 13 Jun 2022 10:21:54 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/mysql%E7%9A%84%E6%85%A2sql%E5%8F%AF%E8%83%BD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0/</guid>
+    <description><![CDATA[1.慢SQL的可能原因 查询的表，没有添加索引。 查询的索引无效。 查询使用了临时表。 join或子查询太多。 查询的结果数据量太大。 锁竞争。 limi]]></description>
+</item>
+<item>
     <title>Redis跟MySQL缓存一致性</title>
     <link>http://example.org/zh-cn/posts/redis%E8%B7%9Fmysql%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/</link>
     <pubDate>Sat, 11 Jun 2022 11:34:17 &#43;0800</pubDate>
