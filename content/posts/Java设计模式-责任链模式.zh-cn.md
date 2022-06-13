@@ -30,6 +30,7 @@ categories: ["Tech"]
 
 ### 2.代码实现
 开发一个请假流程控制系统。请假一天以下的假只需要小组长同意即可；请假1天到3天的假还需要部门经理同意；请求3天到7天还需要总经理同意才行。
+
 **LeaveRequest**
 ```Java
 package com.zhuang.responsibility;
