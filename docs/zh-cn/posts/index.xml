@@ -3,7 +3,15 @@
         <title>所有文章 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/posts/</link>
         <description>所有文章 | XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 13 Jun 2022 10:21:54 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 13 Jun 2022 11:44:49 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Java设计模式 责任链模式</title>
+    <link>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Mon, 13 Jun 2022 11:44:49 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.责任链模式的定义和特点 责任链模式的定义： 为了避免发送者与多个请求处理者耦合在一起，于是将所有请求的处理者通过前一对象记住其下一个对象的引]]></description>
+</item>
+<item>
     <title>MySQL的慢SQL可能的几个原因</title>
     <link>http://example.org/zh-cn/posts/mysql%E7%9A%84%E6%85%A2sql%E5%8F%AF%E8%83%BD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0/</link>
     <pubDate>Mon, 13 Jun 2022 10:21:54 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/</guid>
     <description><![CDATA[1.如何保证消息不重复消费 1.出现重复消费的场景 首先各类消息中间件都有可能出现消息重复消费的问题，因为此类问题通常不是由MQ来保证的，而是消]]></description>
-</item>
-<item>
-    <title>数据库的四大特性</title>
-    <link>http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/</link>
-    <pubDate>Tue, 07 Jun 2022 15:31:24 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/zh-cn/posts/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E6%80%A7/</guid>
-    <description><![CDATA[1.4大特性 原子性：事务的所有SQL操作作为原子工作单位执行，要么全部执行，要么全部不执行； 一致性：事务完成后，所有数据的状态都是一致的，比]]></description>
 </item>
 </channel>
 </rss>

@@ -3,7 +3,7 @@ title: "Java设计模式 责任链模式"
 date: 2022-06-13T11:44:49+08:00
 draft: false
 author: 插画师
-tags：["Java","设计模式"]
+tags: ["Java","设计模式"]
 categories: ["Tech"]
 ---
 # 1.责任链模式的定义和特点
