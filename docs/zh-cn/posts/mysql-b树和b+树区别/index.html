@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>MySQL-B树和B&#43;树区别 - XXOXXSXX</title><meta name="Description" content="I don&#39;t give a fuck"><meta property="og:title" content="MySQL-B树和B&#43;树区别" />
+<meta property="og:description" content="1.B树和B&#43;树的区别 区别 B&#43;树中只有叶子结点会带有指向记录的指针（rowid），而B树泽所有节点都带有，在内部节点出现的索引项不会再出现在" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-15T13:51:05+08:00" />
+<meta property="article:modified_time" content="2022-06-15T13:51:05+08:00" /><meta property="og:site_name" content="XXOXXSXX" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MySQL-B树和B&#43;树区别"/>
+<meta name="twitter:description" content="1.B树和B&#43;树的区别 区别 B&#43;树中只有叶子结点会带有指向记录的指针（rowid），而B树泽所有节点都带有，在内部节点出现的索引项不会再出现在"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" /><link rel="prev" href="http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "MySQL-B树和B+树区别",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/zh-cn\/posts\/mysql-b%E6%A0%91%E5%92%8Cb\u002b%E6%A0%91%E5%8C%BA%E5%88%AB\/"
+        },"genre": "posts","keywords": "MySQL","wordcount":  262 ,
+        "url": "http:\/\/example.org\/zh-cn\/posts\/mysql-b%E6%A0%91%E5%92%8Cb\u002b%E6%A0%91%E5%8C%BA%E5%88%AB\/","datePublished": "2022-06-15T13:51:05+08:00","dateModified": "2022-06-15T13:51:05+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "插画师"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" selected>简体中文</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="">文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">MySQL-B树和B+树区别</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-15">2022-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 262 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="1b树和b树的区别">1.B树和B+树的区别</h1>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/MySQL-B%e6%a0%91%e5%92%8cB&#43;%e6%a0%91%e5%8c%ba%e5%88%ab/1.png"
+        data-srcset="/MySQL-B%e6%a0%91%e5%92%8cB&#43;%e6%a0%91%e5%8c%ba%e5%88%ab/1.png, /MySQL-B%e6%a0%91%e5%92%8cB&#43;%e6%a0%91%e5%8c%ba%e5%88%ab/1.png 1.5x, /MySQL-B%e6%a0%91%e5%92%8cB&#43;%e6%a0%91%e5%8c%ba%e5%88%ab/1.png 2x"
+        data-sizes="auto"
+        alt="/MySQL-B树和B&#43;树区别/1.png"
+        title="/MySQL-B树和B&#43;树区别/1.png" /></p>
+<h4 id="区别">区别</h4>
+<ol>
+<li>B+树中只有叶子结点会带有指向记录的指针（rowid），而B树泽所有节点都带有，在内部节点出现的索引项不会再出现在叶子结点中。</li>
+<li>B+树中所有叶子结点都是通过指针连接在一起，而B树不会。</li>
+</ol>
+<h5 id="b树的优点">B+树的优点</h5>
+<ol>
+<li>非叶子节点不会带上rowid，这样一个块中可以容纳更多的索引项。一是可以降低树的高度，二是一个内部节点可以定位更多的叶子节点。</li>
+<li>叶子节点之间通过指针来连接，范围扫描将十分简单。而对于B树来说，则需要在叶子节点和内部节点之间不停地往返移动。</li>
+</ol>
+<h5 id="b树的优点-1">B树的优点</h5>
+<p>对于在内部节点的数据，可直接得到，不必根据叶子节点来定位。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-06-15</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" data-title="MySQL-B树和B&#43;树区别" data-hashtags="MySQL"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" data-hashtag="MySQL"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" data-title="MySQL-B树和B&#43;树区别"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" data-title="MySQL-B树和B&#43;树区别"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" data-title="MySQL-B树和B&#43;树区别"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/mysql/">MySQL</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/" class="prev" rel="prev" title="Java设计模式 责任链模式"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Java设计模式 责任链模式</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
