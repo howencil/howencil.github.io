@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Redis汇总 - XXOXXSXX</title><meta name="Description" content="I don&#39;t give a fuck"><meta property="og:title" content="Redis汇总" />
+<meta property="og:description" content="1.什么是Redis Redis是一个key-value类型的内存数据库吗，整个数据库系统加载在内存中进行操作，并定期通过异步操作把数据库数据" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/zh-cn/posts/redis%E6%B1%87%E6%80%BB/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-20T15:36:25+08:00" />
+<meta property="article:modified_time" content="2022-06-20T15:36:25+08:00" /><meta property="og:site_name" content="XXOXXSXX" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Redis汇总"/>
+<meta name="twitter:description" content="1.什么是Redis Redis是一个key-value类型的内存数据库吗，整个数据库系统加载在内存中进行操作，并定期通过异步操作把数据库数据"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/zh-cn/posts/redis%E6%B1%87%E6%80%BB/" /><link rel="prev" href="http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" /><link rel="next" href="http://example.org/zh-cn/posts/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E6%98%AF%E4%BB%80%E4%B9%88%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Redis汇总",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/zh-cn\/posts\/redis%E6%B1%87%E6%80%BB\/"
+        },"genre": "posts","keywords": "Redis","wordcount":  1403 ,
+        "url": "http:\/\/example.org\/zh-cn\/posts\/redis%E6%B1%87%E6%80%BB\/","datePublished": "2022-06-20T15:36:25+08:00","dateModified": "2022-06-20T15:36:25+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "插画师"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/redis%E6%B1%87%E6%80%BB/" selected>简体中文</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="">文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/redis%E6%B1%87%E6%80%BB/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Redis汇总</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-20">2022-06-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1403 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="1什么是redis">1.什么是Redis</h1>
+<p><code>Redis</code>是一个key-value类型的内存数据库吗，整个数据库系统加载在内存中进行操作，并定期通过异步操作把数据库数据<code>flush</code>到硬盘上进行保存。</p>
+<h1 id="2redis的数据类型">2.Redis的数据类型</h1>
+<ol>
+<li>stirng: <strong>字符串</strong></li>
+<li>list: <strong>可重复的集合</strong></li>
+<li>set: <strong>不可重复的集合</strong></li>
+<li>hash: <strong>类似Map&lt;String,String&gt;</strong></li>
+<li>zset: <strong>可以排序的set</strong></li>
+</ol>
+<h1 id="3一个字符串类型的value能存储的最大容量是多少">3.一个字符串类型的value能存储的最大容量是多少</h1>
+<p>512MB</p>
+<h1 id="4怎么理解redis事务">4.怎么理解Redis事务？</h1>
+<p><code>Redis</code>无法做到关系型数据库（诸如MySQL）一样严格的ACID属性。</p>
+<p>为了效率，<code>Redis</code>舍弃了事务控制过程中的回滚支持。</p>
+<p>一个队列中的多个命令除非是在加入队列时发现错误会做到整个事务都不执行，否则所有命令都会执行，哪怕是队列中有的命令会执行失败。</p>
+<p>在配合<code>wacth</code>命令后，<code>Redis</code>的事务可以实现乐观锁的效果：一个队列中的命令在执行时如果检测到碰撞，则放弃自己的操作。</p>
+<blockquote>
+<p>关于watch命令：watch命令可以监控一个或多个键，一旦其中一个键被修改或删除，之后的事务就不会执行。监控一直持续到exec命令（事务中的命令是在exec之后才执行的，所以multi命令可以修改watch监控的键值）。</p>
+</blockquote>
+<h1 id="5redis事务相关的命令有哪几个过期时间和永久有效如何设置">5.Redis事务相关的命令有哪几个？过期时间和永久有效如何设置？</h1>
+<ol>
+<li>事务相关的命令：
+<code>multi</code>，
+<code>exec</code>，
+<code>discard</code>，
+<code>watch</code></li>
+<li>过期时间和永久有效：
+<code>expire</code>和<code>persist</code></li>
+</ol>
+<h1 id="6redis缓存怎么做扩容">6.Redis缓存怎么做扩容？</h1>
+<p>如果<code>Redis</code>被当做缓存使用，使用一致性哈希实现动态扩容缩容。</p>
+<h1 id="7为什么redis需要把所有数据放到内存中">7.为什么Redis需要把所有数据放到内存中？</h1>
+<p><code>Redis</code>为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以<code>Redis</code>具有快速和数据持久化的特征。如果不将数据放在内存中，磁盘I/O速度将会严重影响<code>Redis</code>的性能。</p>
+<p>如果设置了最大使用内存，则数据已有记录数达到内存限值后，不能继续插入新的值。</p>
+<h1 id="8redis如何做到内存优化">8.Redis如何做到内存优化？</h1>
+<p>尽可能使用散列表（hashes)，散列表使用的内存非常小，所以应该尽可能地将你的数据模型抽象到一个散列表里。比如一个用户对象，不要为这个用户的名字、姓氏、邮箱、密码设置单独的<code>key</code>，而是应该把这个用户的所有信息存储到一张散列表里面。</p>
+<h1 id="9缓存穿透缓存击穿缓存雪崩是什么以及解决方案">9.缓存穿透、缓存击穿、缓存雪崩是什么？以及解决方案</h1>
+<ol>
+<li>缓存穿透：<strong>数据库和缓存都不存在的数据，被大量请求。</strong>
+<ul>
+<li><strong>解决方案：</strong>
+<ul>
+<li>1.对空数据进行缓存。</li>
+<li>2.使用布隆过滤器。将可能存在的数据<code>hash</code>到<code>bitmap</code>中，<code>bitmap</code>证明该数据不存在则该数据一定不存在；<code>bitmap</code>证明改数据存在也只能证明该数据可能存在。该方案只能做到降低发生的概率，无法完全避免。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缓存击穿：<strong>一个被大量请求的数据，缓存突然失效，导致该大量请求直接请求到数据库，造成数据库压力剧增。</strong>
+<ul>
+<li><strong>解决方案：</strong>
+<ul>
+<li>1.如果是热点数据，可以设置永不过期。</li>
+<li>2.如果数据一定会过期，那可以使用互斥锁，一次只能通过一个请求。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缓存雪崩：<strong>缓存中大量的数据，在同一个时间点、或者较短时间内，全部过期了，导致请求直接请求到数据库，导致数据库压力剧增。</strong>
+<ul>
+<li><strong>解决方案：</strong>
+<ul>
+<li>1.如果是热点数据，可以设置永不过期。</li>
+<li>2.缓存时间设置一个波动值，避免在同时间内大量的缓存失效。</li>
+<li>3.如果有多台<code>Redis</code>，可以将热点数据打散分到不同的机器当中。</li>
+<li>4.双缓存模式。数据库数据同步到缓存A和B。A设置过期时间，B不设置过期时间。当A为空时去读取B，同时异步去更新缓存，但是更新时需要同时更新2个缓存。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="10">10.</h1>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-06-20</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/posts/redis%E6%B1%87%E6%80%BB/" data-title="Redis汇总" data-hashtags="Redis"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/posts/redis%E6%B1%87%E6%80%BB/" data-hashtag="Redis"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/zh-cn/posts/redis%E6%B1%87%E6%80%BB/" data-title="Redis汇总"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/zh-cn/posts/redis%E6%B1%87%E6%80%BB/" data-title="Redis汇总"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/posts/redis%E6%B1%87%E6%80%BB/" data-title="Redis汇总"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/zh-cn/tags/redis/">Redis</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/" class="prev" rel="prev" title="MySQL-B树和B&#43;树区别"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>MySQL-B树和B+树区别</a>
+            <a href="/zh-cn/posts/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E6%98%AF%E4%BB%80%E4%B9%88%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="next" rel="next" title="缓存穿透、缓存击穿、缓存雪崩是什么？以及解决方案">缓存穿透、缓存击穿、缓存雪崩是什么？以及解决方案<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
