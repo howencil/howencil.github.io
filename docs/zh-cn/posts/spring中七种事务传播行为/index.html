@@ -85,13 +85,27 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
             </div><div class="content" id="content"><h1 id="spring中7种事务传播行为">Spring中7种事务传播行为</h1>
 <ol>
-<li><strong>PROPAGATION_REQUIRED:</strong> 如果当前没有事务则新建事务。如果已经存在一个事务，则进入这个事务。</li>
-<li><strong>PROPAGATION_SUPPORTS:</strong> 支持当前事务，如果当前没有事务，就以非事务方式执行。</li>
-<li><strong>PROPAGATION_MANDATORY:</strong> 使用当前的事务，如果当前没有事务，就抛出异常。</li>
-<li><strong>PROPAGATION_REQUIRES_NEW:</strong> 新建事务，如果当前存在事务，把当前事务挂起。</li>
-<li><strong>PROPAGATION_NOT_SUPPORTED:</strong> 以非事务方式执行操作，如果当前存在事务，则将当前事务挂起。</li>
-<li><strong>PROPAGATION_NEVER:</strong> 以非事务方式执行，如果当前存在事务，则抛出异常。</li>
-<li><strong>PROPAGATION_NESTED:</strong> 如果当前存在事务，则在嵌套事务内执行。如果还没有事务，则执行与<strong>PROPAGATION_REQUIRED</strong> 类似的操作（新建事务）。</li>
+<li>
+<p><strong>PROPAGATION_REQUIRED:</strong> 如果当前没有事务则新建事务。如果已经存在一个事务，则进入这个事务。</p>
+</li>
+<li>
+<p><strong>PROPAGATION_SUPPORTS:</strong> 支持当前事务，如果当前没有事务，就以非事务方式执行。</p>
+</li>
+<li>
+<p><strong>PROPAGATION_MANDATORY:</strong> 使用当前的事务，如果当前没有事务，就抛出异常。</p>
+</li>
+<li>
+<p><strong>PROPAGATION_REQUIRES_NEW:</strong> 新建事务，如果当前存在事务，把当前事务挂起。</p>
+</li>
+<li>
+<p><strong>PROPAGATION_NOT_SUPPORTED:</strong> 以非事务方式执行操作，如果当前存在事务，则将当前事务挂起。</p>
+</li>
+<li>
+<p><strong>PROPAGATION_NEVER:</strong> 以非事务方式执行，如果当前存在事务，则抛出异常。</p>
+</li>
+<li>
+<p><strong>PROPAGATION_NESTED:</strong> 如果当前存在事务，则在嵌套事务内执行。如果还没有事务，则执行与<strong>PROPAGATION_REQUIRED</strong> 类似的操作（新建事务）。</p>
+</li>
 </ol>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
