@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/zh-cn\/posts\/redis%E6%B1%87%E6%80%BB\/"
-        },"genre": "posts","keywords": "Redis","wordcount":  1403 ,
+        },"genre": "posts","keywords": "Redis","wordcount":  2710 ,
         "url": "http:\/\/example.org\/zh-cn\/posts\/redis%E6%B1%87%E6%80%BB\/","datePublished": "2022-06-20T15:36:25+08:00","dateModified": "2022-06-20T15:36:25+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -75,14 +75,35 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Redis汇总</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-20">2022-06-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1403 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-20">2022-06-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2710 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1rdb持久化">1.RDB持久化：</a></li>
+        <li><a href="#2aof持久化">2.AOF持久化</a></li>
+        <li><a href="#3总结">3.总结</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1缓存淘汰策略主要分为3类">1.缓存淘汰策略主要分为3类</a></li>
+        <li><a href="#noevition">noevition：</a></li>
+        <li><a href="#volatile">volatile：</a></li>
+        <li><a href="#allkeys">allkeys</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
             </div><div class="content" id="content"><h1 id="1什么是redis">1.什么是Redis</h1>
 <p><code>Redis</code>是一个key-value类型的内存数据库吗，整个数据库系统加载在内存中进行操作，并定期通过异步操作把数据库数据<code>flush</code>到硬盘上进行保存。</p>
 <h1 id="2redis的数据类型">2.Redis的数据类型</h1>
@@ -155,7 +176,63 @@
 </ul>
 </li>
 </ol>
-<h1 id="10">10.</h1>
+<h1 id="10悲观锁">10.悲观锁</h1>
+<p><code>Redis</code>不支持悲观锁。<code>Redis</code>作为缓存服务器使用时，以读操作为主，很少写操作，相应的操作被打断的几率较少。不采用悲观锁是为了防止降低性能。</p>
+<h1 id="11redis的持久化">11.Redis的持久化</h1>
+<h3 id="1rdb持久化">1.RDB持久化：</h3>
+<p>每隔一段时间，将内存中的数据集写到磁盘。</p>
+<p><code>Redis</code>会单独创建（<code>fork</code>）一个子进程来进行持久化，会先将数据写入到临时文件中，待持久化过程结束了，再用这个临时文件替换上次持久化好的文件。整个过程中，主进程是不进行任务IO操作的，这就确保了极高的性能。如果需要进行大规模数据的恢复，且对于数据恢复的完整性不是非常敏感，那RDB的方式要比AOF的方式更加高效。</p>
+<h3 id="2aof持久化">2.AOF持久化</h3>
+<p>以日志的形式记录每个更新操作。<code>Redis</code>重新启动时读取这个文件，重新执行新建、修改数据的命令恢复数据。</p>
+<p><strong>缺点：</strong></p>
+<ol>
+<li>比起RDB占用更多的磁盘空间。</li>
+<li>恢复备份速度要慢。</li>
+<li>每次读写都同步的话，有一定的性能压力。</li>
+<li>存在个别bug，造成恢复不能。</li>
+</ol>
+<h3 id="3总结">3.总结</h3>
+<p><strong>官方推荐：</strong> 如果对数据不敏感，可以单独使用RDB；不建议单独使用AOF，因为可能出现bug；如果只是单纯做纯内存缓存，可以都不用。</p>
+<h1 id="12redis是单线程的为什么那么快">12.Redis是单线程的，为什么那么快？</h1>
+<ol>
+<li><strong>完全基于内存，绝大部分请求是纯粹的内存操作。</strong> 数据存在内存中，类似于<code>HashMap</code>、<code>HashMap</code>的优势就是查找和操作的时间复杂度都是O(1)。</li>
+<li><strong>数据结构简单</strong>，对数据的操作也简单。<code>Redis</code>中的数据结构也是专门进行设计的。</li>
+<li>采用单线程，避免了不必要的上下文切换和竞争条件，也不存在多进程或者多线程导致的切换而消耗CPU，不用去考虑各种锁的问题，也不存在加锁释放锁操作，没有因为可能出现死锁而导致的性能消耗。</li>
+<li>采用多路I/O复用模型，非阻塞IO。</li>
+<li>使用底层模型不同，它们之间底层实现方式以及与客户端直接通信的应用协议不一样，<code>Redis</code>直接自己构建了VM机制，因为一般的系统调用系统函数的话，会浪费一定的时间去移动和请求。</li>
+</ol>
+<h1 id="13redis常见性能问题和解决方案">13.Redis常见性能问题和解决方案</h1>
+<ol>
+<li>Master最好不要做任务持久化工作，比如RDB内存快照和AOF日志文件。</li>
+<li>如果数据比较重要，某个Slave开启AOF备份数据，策略设置为每秒同步一次。</li>
+<li>为了主从复制和连接的稳定性，Master和Slave最好在同一个局域网内。</li>
+<li>尽量避免在压力很大的主库上增加从库。</li>
+<li>主从复制不要用图状结构，用单向链表结构更为稳定。</li>
+</ol>
+<h1 id="14redis的数据淘汰策略">14.Redis的数据淘汰策略</h1>
+<h3 id="1缓存淘汰策略主要分为3类">1.缓存淘汰策略主要分为3类</h3>
+<ol>
+<li><code>noevition</code></li>
+<li><code>volatile</code></li>
+<li><code>allkeys</code></li>
+</ol>
+<h3 id="noevition">noevition：</h3>
+<p><code>Redis</code>的默认策略。只接收读请求，不执行写请求（会直接返回错误）。</p>
+<h3 id="volatile">volatile：</h3>
+<p><strong>volatile只淘汰设置了过期时间的key。</strong></p>
+<ol>
+<li><strong>volatile-lru：</strong> 根据lru算法淘汰设置了过期时间的key，<strong>lru算法优先删除最近最少使用的key。</strong></li>
+<li><strong>volatile-ttl:</strong> 根据key的过期时间的长短 淘汰设置了过期时间的key，<strong>过期时间越小的key优先被删除。</strong></li>
+<li><strong>volatile-random:</strong> <strong>随机淘汰设置了过期时间的key。</strong></li>
+</ol>
+<h3 id="allkeys">allkeys</h3>
+<p><strong>allkeys对所有key无差别淘汰</strong></p>
+<ol>
+<li><strong>allkeys-lru:</strong> 根据lru算法淘汰所有的key，<strong>最近最少使用的key优先被删除。</strong></li>
+<li><strong>allkeys-random:</strong> <strong>随机淘汰所有的key。</strong></li>
+</ol>
+<h1 id="15修改配置不重启redis会实时生效吗">15.修改配置不重启Redis会实时生效吗？</h1>
+<p>大部分配置可以通过<code>config set</code>命令进行修改，而无需执行任何形式的重启。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
