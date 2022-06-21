@@ -3,7 +3,15 @@
         <title>Tags - 标签 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/tags/</link>
         <description>Tags - 标签 - XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 21 Jun 2022 15:20:43 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 21 Jun 2022 15:39:45 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Java</title>
+    <link>http://example.org/zh-cn/tags/java/</link>
+    <pubDate>Tue, 21 Jun 2022 15:39:45 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/zh-cn/tags/java/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Redis</title>
     <link>http://example.org/zh-cn/tags/redis/</link>
     <pubDate>Tue, 21 Jun 2022 15:20:43 &#43;0800</pubDate>
@@ -17,14 +25,6 @@
     <pubDate>Wed, 15 Jun 2022 13:51:05 &#43;0800</pubDate>
     <author>作者</author>
     <guid>http://example.org/zh-cn/tags/mysql/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Java</title>
-    <link>http://example.org/zh-cn/tags/java/</link>
-    <pubDate>Mon, 13 Jun 2022 11:44:49 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>http://example.org/zh-cn/tags/java/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>

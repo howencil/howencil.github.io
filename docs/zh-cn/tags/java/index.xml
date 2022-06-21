@@ -3,7 +3,15 @@
         <title>Java - 标签 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/tags/java/</link>
         <description>Java - 标签 - XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 13 Jun 2022 11:44:49 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/java/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 21 Jun 2022 15:39:45 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring中七种事务传播行为</title>
+    <link>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</link>
+    <pubDate>Tue, 21 Jun 2022 15:39:45 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</guid>
+    <description><![CDATA[Spring中7种事务传播行为 PROPAGATION_REQUIRED: 如果当前没有事务则新建事务。如果已经存在一个事务，则进入这个事务。 PROPAGATION_SUPPORTS: 支持当前事务，如果当前没有事务，就以非事]]></description>
+</item>
+<item>
     <title>Java设计模式 责任链模式</title>
     <link>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Mon, 13 Jun 2022 11:44:49 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/forkjoinpool%E5%92%8C%E4%B8%80%E8%88%AC%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/</guid>
     <description><![CDATA[说在前面 首先是结论： ForkJoinPool不是为了替代ExecutorService，而是他的补充，在某些场景下性能比ExecutorSe]]></description>
-</item>
-<item>
-    <title>线程池是怎么配置的？线程池的执行流程？</title>
-    <link>http://example.org/zh-cn/posts/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%98%AF%E6%80%8E%E4%B9%88%E9%85%8D%E7%BD%AE%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/</link>
-    <pubDate>Tue, 07 Jun 2022 10:31:14 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/zh-cn/posts/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%98%AF%E6%80%8E%E4%B9%88%E9%85%8D%E7%BD%AE%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/</guid>
-    <description><![CDATA[1.线程池如何配置 线程池的主要参数： 核心线程数 最大线程数 空闲时间 时间单位 拒绝策略 任务队列 核心线程数量大小选择 | 看业务选择 CPU密集型：核心数]]></description>
 </item>
 </channel>
 </rss>
