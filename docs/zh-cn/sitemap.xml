@@ -2,7 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/zh-cn/categories/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod><xhtml:link
+            <loc>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/zh-cn/categories/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://example.org/categories/"
@@ -15,8 +16,30 @@
                     hreflang="zh-cn"
                     href="http://example.org/zh-cn/categories/"
                     /></url><url>
+            <loc>http://example.org/zh-cn/posts/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://example.org/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://example.org/zh-cn/posts/"
+                    /></url><url>
+            <loc>http://example.org/zh-cn/categories/tech/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/zh-cn/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://example.org/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="fr"
+                        href="http://example.org/fr/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://example.org/zh-cn/"
+                    /></url><url>
             <loc>http://example.org/zh-cn/tags/java/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/zh-cn/posts/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/tags/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
@@ -30,20 +53,6 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="http://example.org/zh-cn/tags/"
-                    /></url><url>
-            <loc>http://example.org/zh-cn/categories/tech/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/zh-cn/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://example.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="http://example.org/fr/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://example.org/zh-cn/"
                     /></url><url>
             <loc>http://example.org/zh-cn/tags/redis/</loc><lastmod>2022-06-21T15:20:43&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/posts/redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%BA%E4%BB%80%E4%B9%88%E9%82%A3%E4%B9%88%E5%BF%AB/</loc><lastmod>2022-06-21T15:20:43&#43;08:00</lastmod></url><url>

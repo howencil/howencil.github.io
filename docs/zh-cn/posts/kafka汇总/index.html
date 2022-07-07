@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>&#39;Kafka汇总&#39; - XXOXXSXX</title><meta name="Description" content="I don&#39;t give a fuck"><meta property="og:title" content="&#39;Kafka汇总&#39;" />
+<meta property="og:description" content="1.kafka的设计 Kafka将消息以topic为单位进行归纳， 将向Kafka Topic发布消息的程序Producers 将预订topics并" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-07T18:59:45+08:00" />
+<meta property="article:modified_time" content="2022-07-07T18:59:45+08:00" /><meta property="og:site_name" content="XXOXXSXX" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="&#39;Kafka汇总&#39;"/>
+<meta name="twitter:description" content="1.kafka的设计 Kafka将消息以topic为单位进行归纳， 将向Kafka Topic发布消息的程序Producers 将预订topics并"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/" /><link rel="prev" href="http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "'Kafka汇总'",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/zh-cn\/posts\/kafka%E6%B1%87%E6%80%BB\/"
+        },"genre": "posts","wordcount":  2999 ,
+        "url": "http:\/\/example.org\/zh-cn\/posts\/kafka%E6%B1%87%E6%80%BB\/","datePublished": "2022-07-07T18:59:45+08:00","dateModified": "2022-07-07T18:59:45+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "插画师"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/"> 文章 </a><a class="menu-item" href="/zh-cn/tags/"> 标签 </a><a class="menu-item" href="/zh-cn/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/" selected>简体中文</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="XXOXXSXX">XXOXXSXX</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="">文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">'Kafka汇总'</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>插画师</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/tech/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Tech</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-07">2022-07-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2999 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="1kafka的设计">1.kafka的设计</h1>
+<p><code>Kafka</code>将消息以<code>topic</code>为单位进行归纳，</p>
+<p>将向<code>Kafka Topic</code>发布消息的程序<code>Producers</code></p>
+<p>将预订<code>topics</code>并消费消息的程序称为<code>consumer</code></p>
+<p><code>Kafka</code>以集群的方式运行，可以由一个或多个服务组成，每个服务叫做一个<code>broker</code></p>
+<p><code>producers</code>通过网络将消息发送到<code>kafka</code>集群，集群向消费者提供消息</p>
+<h1 id="2数据传输的事务定义有哪三种">2.数据传输的事务定义有哪三种？</h1>
+<ol>
+<li><strong>最多一次：</strong> 消息不会被重复发送，最多被传输一次，但也有可能一次不传输；</li>
+<li><strong>最少一次：</strong> 消息不会被漏发送，最少被传输一次，但也有可能被重复传输；</li>
+<li><strong>精确的一次（Exactly once）：</strong> 不会漏传输也不会重复传输，每个消息传输被一次而且仅仅被传输一次。</li>
+</ol>
+<h1 id="3kafka判断一个节点是否还活着有哪2个条件">3.Kafka判断一个节点是否还活着有哪2个条件？</h1>
+<ol>
+<li>节点必须可以维护和<code>Zookeeper</code>的连接，<code>Zookeeper</code>通过心跳机制检查每个节点的连接。</li>
+<li>如果节点是个<code>follower</code>，他必须能及时地同步<code>leader</code>的写操作，延时不能太久。</li>
+</ol>
+<h1 id="4producer是否直接将数据发送到brokere的leader主节点">4.Producer是否直接将数据发送到brokere的leader（主节点）？</h1>
+<p><code>producer</code>直接将数据发送到<code>broker</code>的<code>leader</code>（主节点），不需要在多个节点进行分发，为了帮助<code>producer</code>做到这点，所有的<code>Kafka</code>节点都可以及时地告知：哪些节点是活动的，目标<code>topic</code>目标分区的<code>leader</code>在哪。这样<code>producer</code>就可以直接将消息发送到目的地了。</p>
+<h1 id="5kafka-consumer是否可以消费指定分区消息">5.kafka consumer是否可以消费指定分区消息？</h1>
+<p><code>kafka comsumer</code> 消费消息时，向<code>broker</code>发出<code>fetch</code>请求去消费特定分区的消息，<code>comsumer</code>指定消息在日志中的偏移量<code>offset</code>，就可以消费从这个位置开始的消息，<code>consumer</code>拥有了<code>offset</code>的控制权，可以向后回滚去重新消费之前的消息，这是很有意义的。</p>
+<h1 id="6kafka消息是采用pull模式-还是push模式">6.Kafka消息是采用pull模式, 还是push模式?</h1>
+<p>Kafka 最初考虑的问题是，customer 应该从 brokes 拉取消息还是 brokers 将消息推送到</p>
+<p>consumer，也就是 pull 还 push。在这方面，Kafka 遵循了一种大部分消息系统共同的传统</p>
+<p>的设计：producer 将消息推送到 broker，consumer 从 broker 拉取消息</p>
+<p>一些消息系统比如 Scribe 和 Apache Flume 采用了 push 模式，将消息推送到下游的</p>
+<p>consumer。这样做有好处也有坏处：由 broker 决定消息推送的速率，对于不同消费速率的</p>
+<p>consumer 就不太好处理了。消息系统都致力于让 consumer 以最大的速率最快速的消费消</p>
+<p>息，但不幸的是，push 模式下，当 broker 推送的速率远大于 consumer 消费的速率时，</p>
+<p>consumer 恐怕就要崩溃了。最终 Kafka 还是选取了传统的 pull 模式</p>
+<p>Pull 模式的另外一个好处是 consumer 可以自主决定是否批量的从 broker 拉取数据。Push</p>
+<p>模式必须在不知道下游 consumer 消费能力和消费策略的情况下决定是立即推送每条消息还</p>
+<p>是缓存之后批量推送。如果为了避免 consumer 崩溃而采用较低的推送速率，将可能导致一</p>
+<p>次只推送较少的消息而造成浪费。Pull 模式下，consumer 就可以根据自己的消费能力去决</p>
+<p>定这些策略</p>
+<p>Pull 有个缺点是，如果 broker 没有可供消费的消息，将导致 consumer 不断在循环中轮询，</p>
+<p>直到新消息到 t 达。为了避免这点，Kafka 有个参数可以让 consumer 阻塞知道新消息到达</p>
+<p>(当然也可以阻塞知道消息的数量达到某个特定的量这样就可以批量发</p>
+<h1 id="7kafka高效文件存储设计特点">7.kafka高效文件存储设计特点</h1>
+<ol>
+<li><code>Kafka</code> 把<code>topic</code> 中一个<code>parition</code>大文件分成多个小文件段，通过多个小文段，就容易定期清除或删除已经消费完文件，减少磁盘应用。</li>
+<li>通过索引信息可以快速定位<code>message</code>和确定<code>response</code>的最大大小。</li>
+<li>通过<code>index</code>元数据全部映射到<code>menory</code>，可以避免<code>segment file</code>的IO磁盘操作。</li>
+<li>通过索引文件稀疏存储，可以大幅度降低<code>index</code>文件元数据占用空间大小。</li>
+</ol>
+<h1 id="8kafka与传统消息系统直接有3个关键区别">8.Kafka与传统消息系统直接有3个关键区别</h1>
+<ol>
+<li><code>Kafka</code>持久化日志，这些日志可以被重复读取和无限期保留；</li>
+<li><code>Kafka</code>是一个分布式系统：它以集群的方式运行，可以灵活伸缩，在内部通过复制数据提升容错能力和高可用性；</li>
+<li><code>kafka</code>支持实时的流式处理。</li>
+</ol>
+<h1 id="10kafka创建topic时如何将分区放置到不同的broker中">10.Kafka创建Topic时如何将分区放置到不同的Broker中</h1>
+<ol>
+<li>副本因子不能大于<code>Broker</code>的个数；</li>
+<li>第1个分区（编号为0）的第1个副本放置位置是随机从<code>brokerList</code>选择的；</li>
+<li>其他分区的第1个副本放置位置相对于第0个分区依次往后移。也就是说，如果我们有5个<code>Broker</code>，5个分区。假设第1个分区放在第4个<code>Broker</code>上，那么第2个分区将会放在第5个<code>Broker</code>上；第3个分区将会放在第一个<code>Broker</code>上；第4个分区将会放在第2个<code>Broker</code>上，依次类推。</li>
+<li>剩余的副本相对于第一个车副本放置位置其实是由<code>nextReplicaShift</code>决定的，而这个数也是随机产生的。</li>
+</ol>
+<h1 id="11kafka新建的分区会在哪个目录下创建">11.Kafka新建的分区会在哪个目录下创建</h1>
+<p>在启动 Kafka 集群之前，我们需要配置好 log.dirs 参数，其值是 Kafka 数据的存放目录，</p>
+<p>这个参数可以配置多个目录，目录之间使用逗号分隔，通常这些目录是分布在不同的磁盘</p>
+<p>上用于提高读写性能。</p>
+<p>当然我们也可以配置 log.dir 参数，含义一样。只需要设置其中一个即可。</p>
+<p>如果 log.dirs 参数只配置了一个目录，那么分配到各个 Broker 上的分区肯定只能在这个</p>
+<p>目录下创建文件夹用于存放数据。</p>
+<p>但是如果 log.dirs 参数配置了多个目录，那么 Kafka 会在哪个文件夹中创建分区目录呢？</p>
+<p>答案是：Kafka 会在含有分区目录最少的文件夹中创建新的分区目录，分区目录名为 Topic</p>
+<p>名+分区 ID。注意，是分区文件夹总数最少的目录，而不是磁盘使用量最少的目录！也就</p>
+<p>是说，如果你给 log.dirs 参数新增了一个新的磁盘，新的分区目录肯定是先在这个新的磁</p>
+<p>盘上创建直到这个新的磁盘目录拥有的分区目录不是最少为止。</p>
+<h1 id="12partition的数据如何保存到硬盘">12.Partition的数据如何保存到硬盘</h1>
+<p><code>topic</code>中的多个<code>partition</code>以文件夹的形式保存到<code>broker</code>，每个分区序号从0递增，且消息有序。</p>
+<p><code>Partition</code>文件下有多个<code>Segment</code>（<code>xxx.index</code>, <code>xxx.log</code>）。</p>
+<p><code>Segment</code>文件里的大小和配置文件大小一致可以根据要求修改，默认为1g。</p>
+<p>如果大小大于1g时，会滚动一个新的<code>Segment</code>并且以上一个<code>Segment</code>最后一条消息的偏移量命名。</p>
+<h1 id="13kafka的ack机制">13.Kafka的ack机制</h1>
+<p><code>request.required.acks</code>有3个值 0 1 -1</p>
+<p>**0：**生产者不会等待<code>broker</code>的<code>ack</code>，这个延迟最低但是存储的保证最弱。当<code>server</code>挂掉的时候就会丢数据。</p>
+<p>**1：**服务端会等待<code>ack</code>值<code>leader</code>副本确认接收到消息后发送<code>ack</code>，但如果<code>leader</code>挂掉后他不确保是否复制完成新<code>leader</code>也会导致数据丢失。</p>
+<p>**-1：**同样在1的基础上，服务端会等所有的<code>follower</code>的副本收到数据后才会收到<code>leader</code>发出的<code>ack</code>，这样数据不会丢失。</p>
+<h1 id="14kafka的消费者如何消费数据">14.kafka的消费者如何消费数据</h1>
+<p>消费者每次消费数据的时候，消费者都会记录消费的物理偏移量<code>offset</code>的位置，等到下次消费时，会接着上次的位置继续消费。</p>
+<h1 id="15消费者的负载均衡">15.消费者的负载均衡</h1>
+<p>一个消费者组中的一个分片对应一个消费者成员，他能保证每个消费者成员都能访问，如果组中成员太多会有空闲的成员。</p>
+<h1 id="16数据有序">16.数据有序</h1>
+<p>一个消费者组里它的内部是有序的，消费者组与消费者组之间是无序的。</p>
+<h1 id="17kafka生产数据时数据的分组策略">17.kafka生产数据时数据的分组策略</h1>
+<p>生产者决定数据产生到集群的哪个<code>partition</code>中，</p>
+<p>每一条消息都是<code>key-value</code>格式，</p>
+<p><code>key</code>是由生产者发送数据传入，</p>
+<p>所以生产者<code>key</code>决定了数据产生到集群的哪个<code>partition</code>。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-07-07</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/" data-title="&#39;Kafka汇总&#39;"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/" data-title="&#39;Kafka汇总&#39;"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/" data-title="&#39;Kafka汇总&#39;"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/" data-title="&#39;Kafka汇总&#39;"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/" class="prev" rel="prev" title="Spring中七种事务传播行为"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Spring中七种事务传播行为</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

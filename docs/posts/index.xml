@@ -3,14 +3,13 @@
         <title>All Posts - XXOXXSXX</title>
         <link>http://example.org/posts/</link>
         <description>All Posts | XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 08 Jun 2022 16:07:16 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>开发人员写出死循环，发布上线后如何查出此问题？zh Cn</title>
-    <link>http://example.org/posts/%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%86%99%E5%87%BA%E6%AD%BB%E5%BE%AA%E7%8E%AF%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF%E5%90%8E%E5%A6%82%E4%BD%95%E6%9F%A5%E5%87%BA%E6%AD%A4%E9%97%AE%E9%A2%98zh-cn/</link>
-    <pubDate>Wed, 08 Jun 2022 16:07:16 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/posts/%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%86%99%E5%87%BA%E6%AD%BB%E5%BE%AA%E7%8E%AF%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF%E5%90%8E%E5%A6%82%E4%BD%95%E6%9F%A5%E5%87%BA%E6%AD%A4%E9%97%AE%E9%A2%98zh-cn/</guid>
-    <description><![CDATA[简单模拟操作  先执行top 使用jstack命令得到线程堆栈信息 执行命令jstack PID &gt; loop.txt ，PID为线程ID 查看PID的具体情况 因为jstack使用的是16进制，将PID转换为16进制，执行命令printf&quot;%x&quot; PID 打开loop.txt，搜索第5步的打印结果。 接着访问 curl localhost:8080/top/loop 执行jstack PID &gt; loop.txt 打开 loop.txt文件拉到最后，即可查看详细信息。   具体可参考：线上CPU飚高（死循环，死锁&hellip;） - thinker1017 - 博客园
- ]]></description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title></title>
+    <link>http://example.org/posts/admim/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/posts/admim/</guid>
+    <description><![CDATA[admim CREATE TABLE `apg_health_calendar_admin` (  `id` varchar(50) NOT NULL,  `username` varchar(50) NOT NULL,  `password` varchar(256) NOT NULL,  `remark` varchar(128) DEFAULT NULL,  `is_deleted` tinyint DEFAULT &#39;0&#39; COMMENT &#39;是否删除 1-是 0-否&#39;,  `create_time` timestamp NULL DEFAULT NULL,  `update_time` timestamp NULL DEFAULT NULL,  PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT=&#39;金管家健康日历 - admin&#39;; config CREATE TABLE `apg_health_calendar_config` (  `id` varchar(50) NOT NULL,  `system_time` timestamp NOT NULL COMMENT &#39;日历时间&#39;,  `calendar_pic` varchar(1024) NOT NULL COMMENT &#39;日历底图&#39;,  `question` varchar(45) NOT NULL COMMENT &#39;问题&#39;,  `answer` varchar(90) NOT NULL COMMENT &#39;答案&#39;,  `important_information` varchar(45) NOT NULL COMMENT &#39;重要信息&#39;,  `title` varchar(20) NOT NULL COMMENT &#39;业务标题&#39;,  `address` varchar(45) NOT NULL COMMENT &#39;业务地址&#39;,  `button_content` varchar(5) NOT NULL COMMENT &#39;按钮文案&#39;,  `button_url` varchar(512) NOT NULL COMMENT &#39;按钮链接&#39;,  `befit_content` varchar(3) NOT NULL COMMENT &#39;宜 文案&#39;,  `tabu_content` varchar(3) NOT NULL COMMENT &#39;忌 文案&#39;,  `remark` varchar(128) DEFAULT NULL,  `is_deleted` tinyint DEFAULT &#39;0&#39; COMMENT &#39;是否删除 1-是 0-否&#39;,  `create_time` timestamp NULL DEFAULT NULL,  `update_time` timestamp NULL DEFAULT NULL,  PRIMARY KEY (`id`),  KEY `index_system_time` (`system_time`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT=&#39;金管家健康日历 - 配置表&#39;; ]]></description>
 </item>
 </channel>
 </rss>

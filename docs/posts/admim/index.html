@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title> - XXOXXSXX</title><meta name="Description" content="I don&#39;t give a fuck"><meta property="og:title" content="" />
+<meta property="og:description" content="admim CREATE TABLE `apg_health_calendar_admin` (  `id` varchar(50) NOT NULL,  `username` varchar(50) NOT NULL,  `password` varchar(256) NOT NULL,  `remark` varchar(128) DEFAULT NULL,  `is_deleted` tinyint DEFAULT &#39;0&#39; COMMENT &#39;是否删除 1-是 0-否&#39;,  `create_time` timestamp NULL DEFAULT NULL,  `update_time` timestamp NULL DEFAULT NULL,  PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT=&#39;金管家健康日历 - admin&#39;; config CREATE TABLE `apg_health_calendar_config` (  `id` varchar(50) NOT NULL,  `system_time` timestamp NOT NULL COMMENT &#39;日历时间&#39;,  `calendar_pic` varchar(1024) NOT NULL COMMENT &#39;日历底图&#39;,  `question` varchar(45) NOT NULL COMMENT &#39;问题&#39;,  `answer` varchar(90) NOT NULL COMMENT &#39;答案&#39;,  `important_information` varchar(45) NOT NULL COMMENT &#39;重要信息&#39;,  `title` varchar(20) NOT NULL COMMENT &#39;业务标题&#39;,  `address` varchar(45) NOT NULL COMMENT &#39;业务地址&#39;,  `button_content` varchar(5) NOT NULL COMMENT &#39;按钮文案&#39;,  `button_url` varchar(512) NOT NULL COMMENT &#39;按钮链接&#39;,  `befit_content` varchar(3) NOT NULL COMMENT &#39;宜 文案&#39;,  `tabu_content` varchar(3) NOT NULL COMMENT &#39;忌 文案&#39;,  `remark` varchar(128) DEFAULT NULL,  `is_deleted` tinyint DEFAULT &#39;0&#39; COMMENT &#39;是否删除 1-是 0-否&#39;,  `create_time` timestamp NULL DEFAULT NULL,  `update_time` timestamp NULL DEFAULT NULL,  PRIMARY KEY (`id`),  KEY `index_system_time` (`system_time`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT=&#39;金管家健康日历 - 配置表&#39;; " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/admim/" /><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="XXOXXSXX" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="admim CREATE TABLE `apg_health_calendar_admin` (  `id` varchar(50) NOT NULL,  `username` varchar(50) NOT NULL,  `password` varchar(256) NOT NULL,  `remark` varchar(128) DEFAULT NULL,  `is_deleted` tinyint DEFAULT &#39;0&#39; COMMENT &#39;是否删除 1-是 0-否&#39;,  `create_time` timestamp NULL DEFAULT NULL,  `update_time` timestamp NULL DEFAULT NULL,  PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT=&#39;金管家健康日历 - admin&#39;; config CREATE TABLE `apg_health_calendar_config` (  `id` varchar(50) NOT NULL,  `system_time` timestamp NOT NULL COMMENT &#39;日历时间&#39;,  `calendar_pic` varchar(1024) NOT NULL COMMENT &#39;日历底图&#39;,  `question` varchar(45) NOT NULL COMMENT &#39;问题&#39;,  `answer` varchar(90) NOT NULL COMMENT &#39;答案&#39;,  `important_information` varchar(45) NOT NULL COMMENT &#39;重要信息&#39;,  `title` varchar(20) NOT NULL COMMENT &#39;业务标题&#39;,  `address` varchar(45) NOT NULL COMMENT &#39;业务地址&#39;,  `button_content` varchar(5) NOT NULL COMMENT &#39;按钮文案&#39;,  `button_url` varchar(512) NOT NULL COMMENT &#39;按钮链接&#39;,  `befit_content` varchar(3) NOT NULL COMMENT &#39;宜 文案&#39;,  `tabu_content` varchar(3) NOT NULL COMMENT &#39;忌 文案&#39;,  `remark` varchar(128) DEFAULT NULL,  `is_deleted` tinyint DEFAULT &#39;0&#39; COMMENT &#39;是否删除 1-是 0-否&#39;,  `create_time` timestamp NULL DEFAULT NULL,  `update_time` timestamp NULL DEFAULT NULL,  PRIMARY KEY (`id`),  KEY `index_system_time` (`system_time`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT=&#39;金管家健康日历 - 配置表&#39;; "/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/admim/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/admim\/"
+        },"genre": "posts","wordcount":  163 ,
+        "url": "http:\/\/example.org\/posts\/admim\/","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="XXOXXSXX">XXOXXSXX</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/admim/" selected>English</option></select>
+                    </a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="XXOXXSXX">XXOXXSXX</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/admim/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX"></h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;163 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#admim">admim</a></li>
+        <li><a href="#config">config</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="admim">admim</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>apg_health_calendar_admin<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>username<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>password<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">256</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>remark<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">128</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>is_deleted<span style="color:#f92672">`</span> tinyint <span style="color:#66d9ef">DEFAULT</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;是否删除 1-是 0-否&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>create_time<span style="color:#f92672">`</span> <span style="color:#66d9ef">timestamp</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>update_time<span style="color:#f92672">`</span> <span style="color:#66d9ef">timestamp</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>)
+</span></span><span style="display:flex;"><span>) ENGINE<span style="color:#f92672">=</span>InnoDB <span style="color:#66d9ef">DEFAULT</span> CHARSET<span style="color:#f92672">=</span>utf8mb4 <span style="color:#66d9ef">COLLATE</span><span style="color:#f92672">=</span>utf8mb4_0900_ai_ci <span style="color:#66d9ef">COMMENT</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;金管家健康日历 - admin&#39;</span>;
+</span></span></code></pre></div><h3 id="config">config</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>apg_health_calendar_config<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>system_time<span style="color:#f92672">`</span> <span style="color:#66d9ef">timestamp</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;日历时间&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>calendar_pic<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">1024</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;日历底图&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>question<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">45</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;问题&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>answer<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">90</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;答案&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>important_information<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">45</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;重要信息&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;业务标题&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>address<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">45</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;业务地址&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>button_content<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;按钮文案&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>button_url<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">512</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;按钮链接&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>befit_content<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;宜 文案&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>tabu_content<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;忌 文案&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>remark<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">128</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>is_deleted<span style="color:#f92672">`</span> tinyint <span style="color:#66d9ef">DEFAULT</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;是否删除 1-是 0-否&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>create_time<span style="color:#f92672">`</span> <span style="color:#66d9ef">timestamp</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>update_time<span style="color:#f92672">`</span> <span style="color:#66d9ef">timestamp</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">KEY</span> <span style="color:#f92672">`</span>index_system_time<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>system_time<span style="color:#f92672">`</span>)
+</span></span><span style="display:flex;"><span>) ENGINE<span style="color:#f92672">=</span>InnoDB <span style="color:#66d9ef">DEFAULT</span> CHARSET<span style="color:#f92672">=</span>utf8mb4 <span style="color:#66d9ef">COLLATE</span><span style="color:#f92672">=</span>utf8mb4_0900_ai_ci <span style="color:#66d9ef">COMMENT</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;金管家健康日历 - 配置表&#39;</span>;
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 0001-01-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/admim/" data-title=""><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/posts/admim/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/posts/admim/" data-title=""><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/posts/admim/" data-title=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/admim/" data-title=""><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.96.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

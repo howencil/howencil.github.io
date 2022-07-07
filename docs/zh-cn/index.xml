@@ -3,9 +3,17 @@
         <title>XXOXXSXX</title>
         <link>http://example.org/zh-cn/</link>
         <description>I don&#39;t give a fuck</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 21 Jun 2022 15:39:45 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 07 Jul 2022 18:59:45 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/zh-cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>&#39;Kafka汇总&#39;</title>
+    <link>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</link>
+    <pubDate>Thu, 07 Jul 2022 18:59:45 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</guid>
+    <description><![CDATA[1.kafka的设计 Kafka将消息以topic为单位进行归纳， 将向Kafka Topic发布消息的程序Producers 将预订topics并]]></description>
+</item>
+<item>
     <title>Spring中七种事务传播行为</title>
     <link>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</link>
     <pubDate>Tue, 21 Jun 2022 15:39:45 &#43;0800</pubDate>
@@ -76,14 +84,6 @@
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/redis%E8%B7%9Fmysql%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/</guid>
     <description><![CDATA[1.前言 网上此类问题的解决方案有很多，大多数是说延迟双删，个人认为这个方法太low了，在实际生产中谁会真的让线程sleep个几百毫秒呢？ 主要]]></description>
-</item>
-<item>
-    <title>Go语言初始化配置</title>
-    <link>http://example.org/zh-cn/posts/go%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/</link>
-    <pubDate>Sat, 11 Jun 2022 02:36:59 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/zh-cn/posts/go%E8%AF%AD%E8%A8%80%E5%88%9D%E5%A7%8B%E5%8C%96%E9%85%8D%E7%BD%AE/</guid>
-    <description><![CDATA[1.使用homebrew安装go brew install go 2.设置代理 go env -w GOPROXY=https://goproxy.cn,https://goproxy.io,direct 参考文章：「2022 版」轻松搞定 Go 开发环境]]></description>
 </item>
 </channel>
 </rss>
