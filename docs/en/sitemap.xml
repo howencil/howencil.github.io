@@ -2,7 +2,6 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/posts/admim/</loc></url><url>
             <loc>http://example.org/categories/</loc><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -15,15 +14,6 @@
                     rel="alternate"
                     hreflang="en"
                     href="http://example.org/categories/"
-                    /></url><url>
-            <loc>http://example.org/posts/</loc><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="http://example.org/zh-cn/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="http://example.org/posts/"
                     /></url><url>
             <loc>http://example.org/series/</loc><xhtml:link
                         rel="alternate"

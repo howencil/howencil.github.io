@@ -4,7 +4,7 @@ date: 2022-07-12T10:52:37+08:00
 draft: false
 author: ["插画师"]
 tag: ["Java","设计模式"]
-categories：["Tech"]
+categories: ["Tech"]
 ---
 
 # 1.单例模式的特点
