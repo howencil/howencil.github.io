@@ -2,8 +2,8 @@
 title: "Java 设计模式之单例模式"
 date: 2022-07-12T10:52:37+08:00
 draft: false
-author: ["插画师"]
-tag: ["Java","设计模式"]
+author: 插画师
+tags: ["Java","设计模式"]
 categories: ["Tech"]
 ---
 

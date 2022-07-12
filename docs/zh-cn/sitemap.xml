@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/zh-cn/categories/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod><xhtml:link
+            <loc>http://example.org/zh-cn/categories/</loc><lastmod>2022-07-12T10:52:37&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://example.org/categories/"
@@ -15,33 +15,10 @@
                     hreflang="zh-cn"
                     href="http://example.org/zh-cn/categories/"
                     /></url><url>
-            <loc>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/zh-cn/posts/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://example.org/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://example.org/zh-cn/posts/"
-                    /></url><url>
-            <loc>http://example.org/zh-cn/categories/tech/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/zh-cn/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="http://example.org/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="http://example.org/fr/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="http://example.org/zh-cn/"
-                    /></url><url>
-            <loc>http://example.org/zh-cn/tags/java/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/zh-cn/tags/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod><xhtml:link
+            <loc>http://example.org/zh-cn/tags/java/</loc><lastmod>2022-07-12T10:52:37&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/zh-cn/posts/java-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc><lastmod>2022-07-12T10:52:37&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/zh-cn/posts/</loc><lastmod>2022-07-12T10:52:37&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/zh-cn/tags/</loc><lastmod>2022-07-12T10:52:37&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="http://example.org/tags/"
@@ -54,6 +31,24 @@
                     hreflang="zh-cn"
                     href="http://example.org/zh-cn/tags/"
                     /></url><url>
+            <loc>http://example.org/zh-cn/categories/tech/</loc><lastmod>2022-07-12T10:52:37&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/zh-cn/</loc><lastmod>2022-07-12T10:52:37&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://example.org/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="fr"
+                        href="http://example.org/fr/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="http://example.org/zh-cn/"
+                    /></url><url>
+            <loc>http://example.org/zh-cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc><lastmod>2022-07-12T10:52:37&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</loc><lastmod>2022-07-07T18:59:45&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/zh-cn/tags/spring/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</loc><lastmod>2022-06-21T15:39:45&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/tags/redis/</loc><lastmod>2022-06-21T15:20:43&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/posts/redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%BA%E4%BB%80%E4%B9%88%E9%82%A3%E4%B9%88%E5%BF%AB/</loc><lastmod>2022-06-21T15:20:43&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/posts/redis%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B7%98%E6%B1%B0%E7%AD%96%E7%95%A5/</loc><lastmod>2022-06-21T15:18:49&#43;08:00</lastmod></url><url>
@@ -62,7 +57,6 @@
             <loc>http://example.org/zh-cn/tags/mysql/</loc><lastmod>2022-06-15T13:51:05&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/</loc><lastmod>2022-06-15T13:51:05&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</loc><lastmod>2022-06-13T11:44:49&#43;08:00</lastmod></url><url>
-            <loc>http://example.org/zh-cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc><lastmod>2022-06-13T11:44:49&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/posts/mysql%E7%9A%84%E6%85%A2sql%E5%8F%AF%E8%83%BD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0/</loc><lastmod>2022-06-13T10:21:54&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/posts/redis%E8%B7%9Fmysql%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/</loc><lastmod>2022-06-11T11:34:17&#43;08:00</lastmod></url><url>
             <loc>http://example.org/zh-cn/tags/go/</loc><lastmod>2022-06-11T02:36:59&#43;08:00</lastmod></url><url>

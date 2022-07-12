@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Spring - 标签 - XXOXXSXX</title>
+        <link>http://example.org/zh-cn/tags/spring/</link>
+        <description>Spring - 标签 - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 21 Jun 2022 15:39:45 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/spring/" rel="self" type="application/rss+xml" /><item>
+    <title>Spring中七种事务传播行为</title>
+    <link>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</link>
+    <pubDate>Tue, 21 Jun 2022 15:39:45 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</guid>
+    <description><![CDATA[Spring中7种事务传播行为 PROPAGATION_REQUIRED: 如果当前没有事务则新建事务。如果已经存在一个事务，则进入这个事务。 PROPAGATION_SUPPORTS: 支持当前事务，如果当前没有事务，就以非事]]></description>
+</item>
+</channel>
+</rss>

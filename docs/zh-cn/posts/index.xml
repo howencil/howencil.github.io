@@ -3,7 +3,15 @@
         <title>所有文章 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/posts/</link>
         <description>所有文章 | XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 07 Jul 2022 18:59:45 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Java 设计模式之单例模式</title>
+    <link>http://example.org/zh-cn/posts/java-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/java-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.单例模式的特点 单例类只有一个实例对象； 该单例对象必须由单例类自行创建； 单例类对外提供一个访问该单例的全局访问点。 2.单例模式的优缺点 1.]]></description>
+</item>
+<item>
     <title>Kafka汇总</title>
     <link>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</link>
     <pubDate>Thu, 07 Jul 2022 18:59:45 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/mysql%E7%9A%84%E6%85%A2sql%E5%8F%AF%E8%83%BD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0/</guid>
     <description><![CDATA[1.慢SQL的可能原因 查询的表，没有添加索引。 查询的索引无效。 查询使用了临时表。 join或子查询太多。 查询的结果数据量太大。 锁竞争。 limi]]></description>
-</item>
-<item>
-    <title>Redis跟MySQL缓存一致性</title>
-    <link>http://example.org/zh-cn/posts/redis%E8%B7%9Fmysql%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/</link>
-    <pubDate>Sat, 11 Jun 2022 11:34:17 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/zh-cn/posts/redis%E8%B7%9Fmysql%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/</guid>
-    <description><![CDATA[1.前言 网上此类问题的解决方案有很多，大多数是说延迟双删，个人认为这个方法太low了，在实际生产中谁会真的让线程sleep个几百毫秒呢？ 主要]]></description>
 </item>
 </channel>
 </rss>

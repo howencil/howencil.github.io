@@ -3,7 +3,15 @@
         <title>设计模式 - 标签 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
         <description>设计模式 - 标签 - XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 13 Jun 2022 11:44:49 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>Java 设计模式之单例模式</title>
+    <link>http://example.org/zh-cn/posts/java-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/java-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.单例模式的特点 单例类只有一个实例对象； 该单例对象必须由单例类自行创建； 单例类对外提供一个访问该单例的全局访问点。 2.单例模式的优缺点 1.]]></description>
+</item>
+<item>
     <title>Java设计模式 责任链模式</title>
     <link>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Mon, 13 Jun 2022 11:44:49 &#43;0800</pubDate>

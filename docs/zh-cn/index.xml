@@ -1,7 +1,89 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Zh-Cn - defaultcontentlanguage - XXOXXSXX</title>
+        <title>XXOXXSXX</title>
         <link>http://example.org/zh-cn/</link>
-        <description>Zh-Cn - defaultcontentlanguage - XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="http://example.org/zh-cn/" rel="self" type="application/rss+xml" /></channel>
+        <description>I don&#39;t give a fuck</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</lastBuildDate>
+            <atom:link href="http://example.org/zh-cn/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Java 设计模式之单例模式</title>
+    <link>http://example.org/zh-cn/posts/java-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/java-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.单例模式的特点 单例类只有一个实例对象； 该单例对象必须由单例类自行创建； 单例类对外提供一个访问该单例的全局访问点。 2.单例模式的优缺点 1.]]></description>
+</item>
+<item>
+    <title>Kafka汇总</title>
+    <link>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</link>
+    <pubDate>Thu, 07 Jul 2022 18:59:45 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</guid>
+    <description><![CDATA[1.kafka的设计 Kafka将消息以topic为单位进行归纳， 将向Kafka Topic发布消息的程序Producers 将预订topics并]]></description>
+</item>
+<item>
+    <title>Spring中七种事务传播行为</title>
+    <link>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</link>
+    <pubDate>Tue, 21 Jun 2022 15:39:45 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/spring%E4%B8%AD%E4%B8%83%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA/</guid>
+    <description><![CDATA[Spring中7种事务传播行为 PROPAGATION_REQUIRED: 如果当前没有事务则新建事务。如果已经存在一个事务，则进入这个事务。 PROPAGATION_SUPPORTS: 支持当前事务，如果当前没有事务，就以非事]]></description>
+</item>
+<item>
+    <title>Redis是单线程的，为什么那么快？</title>
+    <link>http://example.org/zh-cn/posts/redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%BA%E4%BB%80%E4%B9%88%E9%82%A3%E4%B9%88%E5%BF%AB/</link>
+    <pubDate>Tue, 21 Jun 2022 15:20:43 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%BA%E4%BB%80%E4%B9%88%E9%82%A3%E4%B9%88%E5%BF%AB/</guid>
+    <description><![CDATA[完全基于内存，绝大部分请求是纯粹的内存操作。 数据存在内存中，类似于HashMap、HashMap的优势就是查找和操作的时间复杂度都是O(1)]]></description>
+</item>
+<item>
+    <title>Redis的数据淘汰策略</title>
+    <link>http://example.org/zh-cn/posts/redis%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B7%98%E6%B1%B0%E7%AD%96%E7%95%A5/</link>
+    <pubDate>Tue, 21 Jun 2022 15:18:49 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/redis%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B7%98%E6%B1%B0%E7%AD%96%E7%95%A5/</guid>
+    <description><![CDATA[Redis的数据淘汰策略 1.缓存淘汰策略主要分为3类 noevition volatile allkeys noevition： Redis的默认策略。只接收读请求，不执行写请求（会直接返回错]]></description>
+</item>
+<item>
+    <title>缓存穿透、缓存击穿、缓存雪崩是什么？以及解决方案</title>
+    <link>http://example.org/zh-cn/posts/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E6%98%AF%E4%BB%80%E4%B9%88%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+    <pubDate>Mon, 20 Jun 2022 18:23:41 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E6%98%AF%E4%BB%80%E4%B9%88%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+    <description><![CDATA[9.缓存穿透、缓存击穿、缓存雪崩是什么？以及解决方案 缓存穿透：数据库和缓存都不存在的数据，被大量请求。 解决方案： 1.对空数据进行缓存。 2.使]]></description>
+</item>
+<item>
+    <title>Redis汇总</title>
+    <link>http://example.org/zh-cn/posts/redis%E6%B1%87%E6%80%BB/</link>
+    <pubDate>Mon, 20 Jun 2022 15:36:25 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/redis%E6%B1%87%E6%80%BB/</guid>
+    <description><![CDATA[1.什么是Redis Redis是一个key-value类型的内存数据库吗，整个数据库系统加载在内存中进行操作，并定期通过异步操作把数据库数据]]></description>
+</item>
+<item>
+    <title>MySQL-B树和B&#43;树区别</title>
+    <link>http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/</link>
+    <pubDate>Wed, 15 Jun 2022 13:51:05 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/mysql-b%E6%A0%91%E5%92%8Cb&#43;%E6%A0%91%E5%8C%BA%E5%88%AB/</guid>
+    <description><![CDATA[1.B树和B+树的区别 区别 B+树中只有叶子结点会带有指向记录的指针（rowid），而B树泽所有节点都带有，在内部节点出现的索引项不会再出现在]]></description>
+</item>
+<item>
+    <title>Java设计模式 责任链模式</title>
+    <link>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Mon, 13 Jun 2022 11:44:49 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.责任链模式的定义和特点 责任链模式的定义： 为了避免发送者与多个请求处理者耦合在一起，于是将所有请求的处理者通过前一对象记住其下一个对象的引]]></description>
+</item>
+<item>
+    <title>MySQL的慢SQL可能的几个原因</title>
+    <link>http://example.org/zh-cn/posts/mysql%E7%9A%84%E6%85%A2sql%E5%8F%AF%E8%83%BD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0/</link>
+    <pubDate>Mon, 13 Jun 2022 10:21:54 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/mysql%E7%9A%84%E6%85%A2sql%E5%8F%AF%E8%83%BD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0/</guid>
+    <description><![CDATA[1.慢SQL的可能原因 查询的表，没有添加索引。 查询的索引无效。 查询使用了临时表。 join或子查询太多。 查询的结果数据量太大。 锁竞争。 limi]]></description>
+</item>
+</channel>
 </rss>
