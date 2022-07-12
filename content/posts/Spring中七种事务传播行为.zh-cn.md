@@ -3,7 +3,7 @@ title: "Spring中七种事务传播行为"
 date: 2022-06-21T15:39:45+08:00
 draft: false
 author: 插画师
-tags: ["Java"]
+tags: ["Java","Spring"]
 categories: ["Tech"]
 ---
 # Spring中7种事务传播行为
