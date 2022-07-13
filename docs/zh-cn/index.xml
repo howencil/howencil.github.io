@@ -3,9 +3,17 @@
         <title>XXOXXSXX</title>
         <link>http://example.org/zh-cn/</link>
         <description>I don&#39;t give a fuck</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 13 Jul 2022 10:27:32 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/zh-cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Java设计模式之工厂模式</title>
+    <link>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Wed, 13 Jul 2022 10:27:32 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.工厂模式的3种形态 简单工厂模式：又称为静态工厂方法模式； 工厂方法模式：又称为多态性工厂模式； 抽象工厂模式：又称为工具箱模式。 2.简单工厂]]></description>
+</item>
+<item>
     <title>Java 设计模式之单例模式</title>
     <link>http://example.org/zh-cn/posts/java-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</pubDate>
@@ -76,14 +84,6 @@
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</guid>
     <description><![CDATA[1.责任链模式的定义和特点 责任链模式的定义： 为了避免发送者与多个请求处理者耦合在一起，于是将所有请求的处理者通过前一对象记住其下一个对象的引]]></description>
-</item>
-<item>
-    <title>MySQL的慢SQL可能的几个原因</title>
-    <link>http://example.org/zh-cn/posts/mysql%E7%9A%84%E6%85%A2sql%E5%8F%AF%E8%83%BD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0/</link>
-    <pubDate>Mon, 13 Jun 2022 10:21:54 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/zh-cn/posts/mysql%E7%9A%84%E6%85%A2sql%E5%8F%AF%E8%83%BD%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0/</guid>
-    <description><![CDATA[1.慢SQL的可能原因 查询的表，没有添加索引。 查询的索引无效。 查询使用了临时表。 join或子查询太多。 查询的结果数据量太大。 锁竞争。 limi]]></description>
 </item>
 </channel>
 </rss>

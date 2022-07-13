@@ -3,7 +3,15 @@
         <title>Java - 标签 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/tags/java/</link>
         <description>Java - 标签 - XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/java/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 13 Jul 2022 10:27:32 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/java/" rel="self" type="application/rss+xml" /><item>
+    <title>Java设计模式之工厂模式</title>
+    <link>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Wed, 13 Jul 2022 10:27:32 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[1.工厂模式的3种形态 简单工厂模式：又称为静态工厂方法模式； 工厂方法模式：又称为多态性工厂模式； 抽象工厂模式：又称为工具箱模式。 2.简单工厂]]></description>
+</item>
+<item>
     <title>Java 设计模式之单例模式</title>
     <link>http://example.org/zh-cn/posts/java-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Tue, 12 Jul 2022 10:52:37 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <author>插画师</author>
     <guid>http://example.org/zh-cn/posts/%E5%B9%B6%E5%8F%91%E6%93%8D%E4%BD%9Chashmap%E4%BC%9A%E5%87%BA%E7%8E%B0%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98/</guid>
     <description><![CDATA[HashMap多线程并发问题分析-正常和异常的rehash1(阿里) - aspirant - 博客园 1.可能引发的问题 多线程put后可能导致get死循环。 多线程]]></description>
-</item>
-<item>
-    <title>Hashmap的原理？hashmap为什么用红黑树？</title>
-    <link>http://example.org/zh-cn/posts/hashmap%E7%9A%84%E5%8E%9F%E7%90%86hashmap%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E7%BA%A2%E9%BB%91%E6%A0%91/</link>
-    <pubDate>Tue, 07 Jun 2022 15:07:41 &#43;0800</pubDate>
-    <author>插画师</author>
-    <guid>http://example.org/zh-cn/posts/hashmap%E7%9A%84%E5%8E%9F%E7%90%86hashmap%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E7%BA%A2%E9%BB%91%E6%A0%91/</guid>
-    <description><![CDATA[1.数据结构 数组+链表/红黑树 1.什么是Node HashMap类有一个非常重要的属性Node&lt;K,V&gt;，是HashMap的一个内]]></description>
 </item>
 </channel>
 </rss>
