@@ -3,7 +3,7 @@ title: Kafka汇总
 date: 2022-07-07T18:59:45+08:00
 draft: false
 author: 插画师
-tag: ["Kafka","消息中间件MQ"]
+tags: ["Kafka","消息中间件MQ"]
 categories: ["Tech"]
 ---
 # 1.kafka的设计

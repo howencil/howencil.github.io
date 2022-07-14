@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Kafka - 标签 - XXOXXSXX</title>
+        <link>http://example.org/zh-cn/tags/kafka/</link>
+        <description>Kafka - 标签 - XXOXXSXX</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 07 Jul 2022 18:59:45 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/kafka/" rel="self" type="application/rss+xml" /><item>
+    <title>Kafka汇总</title>
+    <link>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</link>
+    <pubDate>Thu, 07 Jul 2022 18:59:45 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</guid>
+    <description><![CDATA[1.kafka的设计 Kafka将消息以topic为单位进行归纳， 将向Kafka Topic发布消息的程序Producers 将预订topics并]]></description>
+</item>
+</channel>
+</rss>

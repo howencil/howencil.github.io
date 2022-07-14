@@ -3,7 +3,15 @@
         <title>消息中间件MQ - 标签 - XXOXXSXX</title>
         <link>http://example.org/zh-cn/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6mq/</link>
         <description>消息中间件MQ - 标签 - XXOXXSXX</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Jun 2022 16:18:14 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6mq/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 07 Jul 2022 18:59:45 &#43;0800</lastBuildDate><atom:link href="http://example.org/zh-cn/tags/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6mq/" rel="self" type="application/rss+xml" /><item>
+    <title>Kafka汇总</title>
+    <link>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</link>
+    <pubDate>Thu, 07 Jul 2022 18:59:45 &#43;0800</pubDate>
+    <author>插画师</author>
+    <guid>http://example.org/zh-cn/posts/kafka%E6%B1%87%E6%80%BB/</guid>
+    <description><![CDATA[1.kafka的设计 Kafka将消息以topic为单位进行归纳， 将向Kafka Topic发布消息的程序Producers 将预订topics并]]></description>
+</item>
+<item>
     <title>如何保证消息不重复消费，如何保证消息不丢失，如何实现消息消费顺序性</title>
     <link>http://example.org/zh-cn/posts/%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E9%87%8D%E5%A4%8D%E6%B6%88%E8%B4%B9%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%B6%88%E6%81%AF%E4%B8%8D%E4%B8%A2%E5%A4%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B6%88%E6%81%AF%E6%B6%88%E8%B4%B9%E9%A1%BA%E5%BA%8F%E6%80%A7/</link>
     <pubDate>Tue, 07 Jun 2022 16:18:14 &#43;0800</pubDate>
